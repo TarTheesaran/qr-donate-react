@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AdminData from "../../services/AdminData";
+import AdminStorage from "./AdminStorage";
 
 export default class AdminDataAdd extends Component {
     constructor(props) {
@@ -60,14 +61,14 @@ export default class AdminDataAdd extends Component {
             category: e.target.value,
         });
     }
-    onChangeImgPoster(e) {
+    onChangeImgPoster(url) {
         this.setState({
-            img_poster_url: e.target.value,
+            img_poster_url: url,
         });
     }
-    onChangeImgQRCode(e) {
+    onChangeImgQRCode(url) {
         this.setState({
-            img_qrcode_url: e.target.value,
+            img_qrcode_url: url,
         });
     }
     saveProject() {
@@ -198,30 +199,16 @@ export default class AdminDataAdd extends Component {
                                     name="category"
                                 />
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="img_poster_url">img_poster_url</label>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    id="img_poster_url"
-                                    required
-                                    value={this.state.img_poster_url}
-                                    onChange={this.onChangeImgPoster}
-                                    name="img_poster_url"
-                                />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="img_qrcode_url">img_qrcode_url</label>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    id="img_qrcode_url"
-                                    required
-                                    value={this.state.img_qrcode_url}
-                                    onChange={this.onChangeImgQRCode}
-                                    name="img_qrcode_url"
-                                />
-                            </div>
+                            <p>
+                                เลือกรูปโปสเตอร์:
+                                <AdminStorage urlFirebaseStorage={this.onChangeImgPoster} />
+                            </p>
+                            <br></br>
+                            <p>
+                                เลือกรูปQR-code:
+                                <AdminStorage urlFirebaseStorage={this.onChangeImgQRCode} />
+
+                            </p>
 
                             <button onClick={this.saveProject} className="btn btn-success">
                                 Submit
@@ -229,7 +216,7 @@ export default class AdminDataAdd extends Component {
                         </div>
                     )}
                 </div>
-            </article>
+            </article >
         );
     }
 }

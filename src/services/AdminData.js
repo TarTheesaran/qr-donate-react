@@ -1,26 +1,24 @@
 import { db } from '../firebase';
 
-
-
 class AdminData {
     getAll() {
-        return db;
+        return db.ref('/project');
     }
 
     create(tutorial) {
-        return db.push(tutorial);
+        return db.ref('/project').push(tutorial);
     }
 
     update(key, value) {
-        return db.child(key).update(value);
+        return db.ref('/project').child(key).update(value);
     }
 
     delete(key) {
-        return db.child(key).remove();
+        return db.ref('/project').child(key).remove();
     }
 
     deleteAll() {
-        return db.remove();
+        return db.ref('/project').remove();
     }
 }
 

@@ -14,7 +14,7 @@ let config = {
 
 firebase.initializeApp(config);
 const storage = firebase.storage();
-const db = firebase.database().ref('/project');
+const db = firebase.database();
 export {
     storage, db, firebase as default
 }

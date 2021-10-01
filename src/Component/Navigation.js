@@ -19,41 +19,46 @@ const Navigation = () => {
                 <ul className={'right'}>
                     <li>
                         <Link to={'/'}>
-                            <a className={'white-text'}>หน้าหลัก</a>
+                            <a className={'white-text'} style={{ fontSize: 20 }}>หน้าหลัก</a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={'/detail'}>
+                            <a className={'white-text'} style={{ fontSize: 20 }}>รายละเอียด</a>
                         </Link>
                     </li>
                     <li>
                         <Link to={'/about'}>
-                            <a className={'white-text'}>เกี่ยวกับ QR-Donate</a>
+                            <a className={'white-text'} style={{ fontSize: 20 }}>เกี่ยวกับ QR-Donate</a>
                         </Link>
                     </li>
                     <li>
                         <Link to={'/howto'}>
-                            <a className={'white-text'}>วิธีการใช้งาน</a>
+                            <a className={'white-text'} style={{ fontSize: 20 }}>วิธีการใช้งาน</a>
                         </Link>
                     </li>
                     <li>
                         <Link to={'/admin'}>
-                            <a className={'white-tex '}><i className={'text-3xl fas fa-user-circle'}></i></a>
+                            <a className={'white-text'} style={{ fontSize: 20 }}><i className={'text-3xl fas fa-user-circle'}></i></a>
                         </Link>
                     </li>
 
                     {/* testpage */}
-                    <li>
+                    {/* <li>
                         <Link to={'/remove'}>
                             <a className={'white-text'}>remove</a>
                         </Link>
                     </li>
                     <li>
                         <Link to={'/add'}>
-                            <a className={'white-tex '}>add</a>
+                            <a className={'white-text '}>add</a>
                         </Link>
                     </li>
                     <li>
                         <Link to={'/sto'}>
-                            <a className={'white-tex '}>sto</a>
+                            <a className={'white-tex '}>อัพรูป</a>
                         </Link>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </nav>

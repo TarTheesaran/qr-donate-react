@@ -4,16 +4,20 @@ import AdminData from "../../services/AdminData";
 export default class AdminDataManage extends Component {
     constructor(props) {
         super(props);
-        this.onChangeTitle = this.onChangeTitle.bind(this);
-        this.onChangeDescription = this.onChangeDescription.bind(this);
         this.updatePublished = this.updatePublished.bind(this);
         this.deleteTutorial = this.deleteTutorial.bind(this);
 
         this.state = {
             currentTutorial: {
                 key: null,
-                title: "",
+                project_name: "",
+                project_agency: "",
+                location: "",
                 description: "",
+                contact: "",
+                category: "",
+                img_poster_url: "",
+                img_qrcode_url: "",
                 published: false,
             },
             message: "",
@@ -38,29 +42,6 @@ export default class AdminDataManage extends Component {
         });
     }
 
-    onChangeTitle(e) {
-        const title = e.target.value;
-
-        this.setState(function (prevState) {
-            return {
-                currentTutorial: {
-                    ...prevState.currentTutorial,
-                    title: title,
-                },
-            };
-        });
-    }
-
-    onChangeDescription(e) {
-        const description = e.target.value;
-
-        this.setState((prevState) => ({
-            currentTutorial: {
-                ...prevState.currentTutorial,
-                description: description,
-            },
-        }));
-    }
 
     updatePublished(status) {
         AdminData.update(this.state.currentTutorial.key, {
@@ -152,7 +133,7 @@ export default class AdminDataManage extends Component {
                                 รูปภาพโปสเตอร์:
                             </span>
                             <span>
-                                <a id="img_poster" target="_blank" href={currentTutorial.img_poster}>แสดงรูปภาพ</a>
+                                <a id="img_qrcode" target="_blank" href={currentTutorial.img_poster_url}>แสดงรูปภาพ</a>
                             </span>
 
                         </p>
@@ -161,7 +142,7 @@ export default class AdminDataManage extends Component {
                                 รูปภาพ QR-code:
                             </span>
                             <span>
-                                <a id="img_qrcode" target="_blank" href={currentTutorial.img_qrcode}>แสดงรูปภาพ</a>
+                                <a id="img_qrcode" target="_blank" href={currentTutorial.img_qrcode_url}>แสดงรูปภาพ</a>
                             </span>
                         </p>
 

@@ -110,13 +110,14 @@ header a{
 }
 
 .dataCard h3 {
-    font-size: 20px;
+    font-size: 22px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     max-width: 100%;
     line-height: 1.4em;
     color: black;
+    font-weight: 500;
 }
 
 h3+p {
@@ -126,10 +127,11 @@ h3+p {
     overflow: hidden;
     white-space: nowrap;
     line-height: 1.2em;
+    font-weight:400;
 }
 
 .detailBlock p span:nth-child(1) {
-    font-weight: bold;
+    font-weight: 500;
     line-height: 2em;
     margin-right: 8px;
 }

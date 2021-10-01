@@ -2,6 +2,7 @@ import React from 'react';
 import './Admin.css'
 import AdminData from "../../services/AdminData";
 import AdminDataManage from "./AdminDataManage";
+import { Link } from 'react-router-dom';
 export default class About extends React.Component {
     constructor(props) {
         super(props);
@@ -43,11 +44,13 @@ export default class About extends React.Component {
                 img_qrcode_url: data.img_qrcode_url,
                 published: data.published,
             });
+            console.log(tutorials);
         });
 
         this.setState({
             tutorials: tutorials,
         });
+
     }
 
     refreshList() {
@@ -88,9 +91,11 @@ export default class About extends React.Component {
                     <section className="projectList">
                         <header>
                             <h1>รายการ</h1>
-                            <a href="./addDataPage.html">
-                                <i className='plusIcon fas fa-plus-circle text-4xl'></i>
-                            </a>
+                            <Link to={'/addproject'}>
+                                <a>
+                                    <i className='plusIcon fas fa-plus-circle text-4xl'></i>
+                                </a>
+                            </Link>
                         </header>
                         <div id="dataList" className="dataListBlock">
                             <ul className="list-group">
