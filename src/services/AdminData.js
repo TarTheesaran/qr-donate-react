@@ -1,6 +1,6 @@
-import firebase from "../firebase";
+import { db } from '../firebase';
 
-const db = firebase.ref("/project");
+
 
 class AdminData {
     getAll() {
