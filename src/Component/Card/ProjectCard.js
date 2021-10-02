@@ -30,18 +30,20 @@ export default class ProjectCard extends React.Component {
         items.forEach((item) => {
             let key = item.key;
             let data = item.val();
-            tutorials.push({
-                key: key,
-                project_name: data.project_name,
-                project_agency: data.project_agency,
-                location: data.location,
-                description: data.description,
-                contact: data.contact,
-                category: data.category,
-                img_poster_url: data.img_poster_url,
-                img_qrcode_url: data.img_qrcode_url,
-                published: data.published,
-            });
+            if (data.published == true) {
+                tutorials.push({
+                    key: key,
+                    project_name: data.project_name,
+                    project_agency: data.project_agency,
+                    location: data.location,
+                    description: data.description,
+                    contact: data.contact,
+                    category: data.category,
+                    img_poster_url: data.img_poster_url,
+                    img_qrcode_url: data.img_qrcode_url,
+                    published: data.published,
+                });
+            }
             console.log(tutorials);
         });
 

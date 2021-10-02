@@ -74,13 +74,15 @@ export default class ProjectDetail extends React.Component {
             img_poster_url,
             img_qrcode_url } = this.state;
         return (
-            <article className=" bg-blue-200" >
-                <div className="mt-10 max-w-6xl  border-4 border-gray-400 rounded-3xl mr-auto ml-auto p-14 z-30 relative bg-white">
-                    <img className="" src={this.state.img_poster_url} width="100%" height="" />
-                    <div className="mt-8">
-                        <img className=" float-none md:float-right md:ml-12 mt-2 w-60 mr-auto ml-auto" src={this.state.img_qrcode_url} />
-                        <h2 className="text-4xl text-gray-900">{this.state.project_name}</h2>
-                        <h3 className="text-2xl text-gray-500 font-light">{this.state.project_agency}</h3>
+            <article className="mr-2 ml-2 bg-gray-100" >
+                <div className="card mt-5 md:mt-12 max-w-6xl  border-1 border-gray-400 rounded-3xl mr-auto ml-auto  z-30 relative bg-white">
+                    <img className=" relative z-5 rounded-t-3xl" src={this.state.img_poster_url} width="100%" />
+                    <div className="h-32 -mt-32 z-6  relative" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0), rgba(255,255,255,1))" }} />
+                    <div className="p-14 pt-10" style={{ minHeight: 360 }}>
+                        <img className=" border-2 border-gray-400 p-1 rounded-md float-none md:float-right md:ml-12 mt-2 w-60 mr-auto ml-auto" src={this.state.img_qrcode_url} />
+                        <h2 className="text-4xl text-gray-900" style={{ textIndent: 10 }}>{this.state.project_name}</h2>
+                        <h3 className="text-2xl text-gray-600 font-normal mt-2">{this.state.project_agency}</h3>
+                        <img className=" block md:hidden md:float-right md:ml-12 mt-2 w-60 mr-auto ml-auto" src={this.state.img_qrcode_url} />
                         <div className=" mt-8" style={{ textIndent: 50 }}>
                             <p className="text-lg">
                                 {this.state.description}
@@ -97,7 +99,7 @@ export default class ProjectDetail extends React.Component {
                             </p>
                         </div>
                     </div>
-                    <div className="mt-10">
+                    <div className="mt-12 md:mt-18">
                         <GoogleMapShow></GoogleMapShow>
                     </div>
                 </div >
