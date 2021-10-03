@@ -1561,7 +1561,7 @@
 
 "@googlemaps/js-api-loader@^1.7.0":
   version "1.12.4"
-  resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.12.4.tgz#9248ed6ca3ab5055158b2ea1d7eabd54251849ab"
+  resolved "https://registry.npmjs.org/@googlemaps/js-api-loader/-/js-api-loader-1.12.4.tgz"
   integrity sha512-CG2ldySYFP+Pf6ymtAp9fUQGltEdOJCv2+LEiQjVZySqSN9QhqVbIFdFDKOu6cirqXXvpVcKYYLsg/K1H8XN0Q==
   dependencies:
     fast-deep-equal "^3.1.3"
@@ -1843,7 +1843,7 @@
 
 "@mapbox/point-geometry@^0.1.0":
   version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
+  resolved "https://registry.npmjs.org/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz"
   integrity sha1-ioP5M1x4YO/6Lu7KJUMyqgru2PI=
 
 "@nodelib/fs.scandir@2.1.5":
@@ -3639,6 +3639,14 @@ brorand@^1.0.1, brorand@^1.1.0:
   resolved "https://registry.npmjs.org/brorand/-/brorand-1.1.0.tgz"
   integrity sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8=
 
+browser-image-compression@^1.0.16:
+  version "1.0.16"
+  resolved "https://registry.npmjs.org/browser-image-compression/-/browser-image-compression-1.0.16.tgz"
+  integrity sha512-jQzclogfr0FX3+JupRtEkB4MWZqfImoLucS+IroAvY6w1Wkmu6nnx4PfKVEFQqk8pGXMTdDHORNDt4vwDO26AQ==
+  dependencies:
+    core-js "^3.16.1"
+    uzip "0.20201231.0"
+
 browser-process-hrtime@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/browser-process-hrtime/-/browser-process-hrtime-1.0.0.tgz"
@@ -4388,6 +4396,13 @@ compress-commons@^4.1.0:
     normalize-path "^3.0.0"
     readable-stream "^3.6.0"
 
+compress.js@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/compress.js/-/compress.js-1.2.1.tgz"
+  integrity sha512-+Goh6V8oXvg4EZjGJCswGr/U0hkgdk2msUE+oNPr0Toj9B/cJ9LTbDxO5VNMJGfJvLMHrElAEh7UQIYdmZB01g==
+  dependencies:
+    regenerator-runtime "^0.13.9"
+
 compressible@~2.0.16:
   version "2.0.18"
   resolved "https://registry.npmjs.org/compressible/-/compressible-2.0.18.tgz"
@@ -4551,7 +4566,7 @@ core-js@^2.4.0:
   resolved "https://registry.npmjs.org/core-js/-/core-js-2.6.12.tgz"
   integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
 
-core-js@^3.16.0, core-js@^3.6.5:
+core-js@^3.16.0, core-js@^3.16.1, core-js@^3.6.5:
   version "3.18.1"
   resolved "https://registry.npmjs.org/core-js/-/core-js-3.18.1.tgz"
   integrity sha512-vJlUi/7YdlCZeL6fXvWNaLUPh/id12WXj3MbkMw5uOyF0PfWPBNOCNbs53YqgrvtujLNlt9JQpruyIKkUZ+PKA==
@@ -6461,7 +6476,7 @@ firebase-tools@^9.19.0:
 
 firebase@^7.17.2:
   version "7.24.0"
-  resolved "https://registry.yarnpkg.com/firebase/-/firebase-7.24.0.tgz#dab53b9c0f1c9538d2d6f4f51769897b0b6d60d8"
+  resolved "https://registry.npmjs.org/firebase/-/firebase-7.24.0.tgz"
   integrity sha512-j6jIyGFFBlwWAmrlUg9HyQ/x+YpsPkc/TTkbTyeLwwAJrpAmmEHNPT6O9xtAnMV4g7d3RqLL/u9//aZlbY4rQA==
   dependencies:
     "@firebase/analytics" "0.6.0"
@@ -7009,7 +7024,7 @@ google-gax@^2.24.1:
 
 google-map-react@^2.1.10:
   version "2.1.10"
-  resolved "https://registry.yarnpkg.com/google-map-react/-/google-map-react-2.1.10.tgz#16b5b699f257d6008dc9333d0bbbf1ab5b31fa42"
+  resolved "https://registry.npmjs.org/google-map-react/-/google-map-react-2.1.10.tgz"
   integrity sha512-cqW2EcygYqF26inp5liM/pAcCwOGXB9LW32oGwf931Iuq8tnasCpyEtq87G+RyQCKCo2P8/QyV+MGHuc7r9AEg==
   dependencies:
     "@googlemaps/js-api-loader" "^1.7.0"
@@ -11839,6 +11854,11 @@ react-error-overlay@^6.0.9:
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.9.tgz"
   integrity sha512-nQTTcUu+ATDbrSD1BZHr5kgSD4oF8OFjxun8uAaL8RwPBacGBNPf/yAuVVdx17N8XNzRDMrZ9XcKZHCjPW+9ew==
 
+react-image-file-resizer@^0.4.7:
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/react-image-file-resizer/-/react-image-file-resizer-0.4.7.tgz#74b33a03832c0771c6c03b037bae9ba6baf10703"
+  integrity sha512-Dak7Ecrd6WEV5LjqoRYFI49ASn7eB1VTlrw6dri9HeIMS6aJang4nli6q5xeckEMY+7QwgqgWqAQD5tgkm4bJg==
+
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
@@ -12115,7 +12135,7 @@ regenerator-runtime@^0.11.0:
   resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz"
   integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
 
-regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.7:
+regenerator-runtime@^0.13.4, regenerator-runtime@^0.13.7, regenerator-runtime@^0.13.9:
   version "0.13.9"
   resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz"
   integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
@@ -14250,6 +14270,11 @@ uuid@^8.3.0:
   version "8.3.2"
   resolved "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
+uzip@0.20201231.0:
+  version "0.20201231.0"
+  resolved "https://registry.npmjs.org/uzip/-/uzip-0.20201231.0.tgz"
+  integrity sha512-OZeJfZP+R0z9D6TmBgLq2LHzSSptGMGDGigGiEe0pr8UBe/7fdflgHlHBNDASTXB5jnFuxHpNaJywSg8YFeGng==
 
 v8-compile-cache@^2.0.3:
   version "2.3.0"

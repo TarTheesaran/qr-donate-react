@@ -9,7 +9,8 @@ export default class ProjectDetail extends React.Component {
             project: [],
             project_name: "",
             project_agency: "",
-            location: "",
+            location_lat: 0,
+            location_lng: 0,
             description: "",
             contact: "",
             category: "",
@@ -31,12 +32,16 @@ export default class ProjectDetail extends React.Component {
             let key = item.key;
             let data = item.val();
             if (key == this.props.match.params.id) {
-                console.log(data.img_poster_url);
+                let lat = parseFloat(data.location.split(',')[0]);
+                let lng = parseFloat(data.location.split(',')[1]);
+                console.log(lat);
+                console.log(lng);
                 project.push({
                     key: key,
                     project_name: data.project_name,
                     project_agency: data.project_agency,
-                    location: data.location,
+                    location_lat: lat,
+                    location_lng: lng,
                     description: data.description,
                     contact: data.contact,
                     category: data.category,
@@ -45,7 +50,6 @@ export default class ProjectDetail extends React.Component {
                     published: data.published,
                 });
             }
-            console.log(project);
         });
 
         this.setState({
@@ -54,7 +58,8 @@ export default class ProjectDetail extends React.Component {
         this.setState({
             project_name: this.state.project[0].project_name,
             project_agency: this.state.project[0].project_agency,
-            location: this.state.project[0].location,
+            location_lat: this.state.project[0].location_lat,
+            location_lng: this.state.project[0].location_lng,
             description: this.state.project[0].description,
             contact: this.state.project[0].contact,
             category: this.state.project[0].category,
@@ -67,7 +72,8 @@ export default class ProjectDetail extends React.Component {
     render() {
         const { project_name,
             project_agency,
-            location,
+            location_lat,
+            location_lng,
             description,
             contact,
             category,
@@ -81,15 +87,15 @@ export default class ProjectDetail extends React.Component {
                     <div className="p-14 pt-10" style={{ minHeight: 360 }}>
                         <img className=" border-2 border-gray-400 p-1 rounded-md float-none md:float-right md:ml-12 mt-2 w-60 mr-auto ml-auto" src={this.state.img_qrcode_url} />
                         <h2 className="text-4xl text-gray-900" style={{ textIndent: 10 }}>{this.state.project_name}</h2>
-                        <h3 className="text-2xl text-gray-600 font-normal mt-2">{this.state.project_agency}</h3>
+                        <h3 className="text-3xl text-gray-600 font-normal mt-2">{this.state.project_agency}</h3>
                         <img className=" block md:hidden md:float-right md:ml-12 mt-2 w-60 mr-auto ml-auto" src={this.state.img_qrcode_url} />
                         <div className=" mt-8" style={{ textIndent: 50 }}>
-                            <p className="text-lg">
+                            <p className="text-xl">
                                 {this.state.description}
                             </p>
                         </div>
                         <div>
-                            <p className="mt-12">
+                            <p className="mt-12 text-xl">
                                 <span className=" font-semibold">
                                     ข้อมูลติดต่อ:
                                 </span>
@@ -100,7 +106,7 @@ export default class ProjectDetail extends React.Component {
                         </div>
                     </div>
                     <div className="mt-12 md:mt-18">
-                        <GoogleMapShow></GoogleMapShow>
+                        <GoogleMapShow locationlat={this.state.location_lat} locationlng={this.state.location_lng}></GoogleMapShow>
                     </div>
                 </div >
             </ article >

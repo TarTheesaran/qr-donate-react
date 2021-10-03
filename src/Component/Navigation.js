@@ -24,7 +24,7 @@ const Navigation = () => {
                     </li>
                     <li>
                         <Link to={'/detail'}>
-                            <a className={'white-text'} style={{ fontSize: 20 }}>รายละเอียด</a>
+                            <a className={'white-text'} style={{ fontSize: 20 }}>รายละเอียด(test)</a>
                         </Link>
                     </li>
                     <li>
@@ -32,11 +32,11 @@ const Navigation = () => {
                             <a className={'white-text'} style={{ fontSize: 20 }}>เกี่ยวกับ QR-Donate</a>
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link to={'/howto'}>
                             <a className={'white-text'} style={{ fontSize: 20 }}>วิธีการใช้งาน</a>
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link to={'/admin'}>
                             <a className={'white-text'} style={{ fontSize: 20 }}><i className={'text-3xl fas fa-user-circle'}></i></a>

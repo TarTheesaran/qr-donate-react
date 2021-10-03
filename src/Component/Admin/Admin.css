@@ -68,13 +68,13 @@
 }
 
 
-header h1 {
+.pageblock header h1 {
     font-size: 33px;
     margin-left: 10px;
     line-height: 1.2em;
 }
 
-header a{
+.pageblock header a{
     margin: auto;
     margin-right: 0px;
 }
@@ -120,7 +120,7 @@ header a{
     font-weight: 500;
 }
 
-h3+p {
+.pageblock h3+p {
     font-size: 18px;
     color: rgb(78, 78, 78);
     text-overflow: ellipsis;
@@ -260,7 +260,7 @@ input:checked+.dataCard {
     .dataCard {
         grid-template-columns: 515px;
     }
-    h3{
+    .pageblock h3{
         width:100%;
     }
 }
@@ -271,27 +271,27 @@ input:checked+.dataCard {
     .dataCard {
         grid-template-columns: auto;
     }
-    h1{
+    .pageblock h1{
         font-size: 26px;
     }
-    h3{
+    .pageblock h3{
         font-size: 18px;
         width: 75vw;
     }
-    h3 + p{
+    .pageblock h3 + p{
         font-size: 15px;
         width: 75vw;
     }
 }
 @media screen and (max-width: 400px) {
-    h1{
+    .pageblock h1{
         font-size: 24px;
     }
-    h3{
+    .pageblock h3{
         font-size: 18px;
         width: 70vw;
     }
-    h3 + p{
+    .pageblock  h3 + p{
         font-size: 15px;
         width: 70vw;
     }
@@ -309,14 +309,14 @@ input:checked+.dataCard {
 
 }
 @media screen and (max-width: 325px) {
-    h1{
+    .pageblock h1{
         font-size: 22px;
     }
-    h3{
+    .pageblock h3{
         font-size: 15px;
         width: 65vw;
     }
-    h3 + p{
+    .pageblock h3 + p{
         font-size: 12px;
         width: 65vw;
     }
@@ -337,34 +337,5 @@ input:checked+.dataCard {
     }
 }
 
-button {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-}
 
-.googleMap {
-    display: none;
-    margin-top: 10px;
-    padding: 0px 20px 70px 20px;
-    background: whitesmoke;
-    position: fixed;
-    top: 20px;
-    width: 70%;
-    height: 80vh;
-    max-height: 700px;
-    border: 5px solid #444444;
-    border-radius: 10px;
-}
-
-.exit-map {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
-}
 

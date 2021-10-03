@@ -44,7 +44,6 @@ export default class About extends React.Component {
                 img_qrcode_url: data.img_qrcode_url,
                 published: data.published,
             });
-            console.log(tutorials);
         });
 
         this.setState({

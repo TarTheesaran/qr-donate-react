@@ -48,13 +48,24 @@ export default class AdminDataManage extends Component {
             published: status,
         })
             .then(() => {
-                this.setState((prevState) => ({
-                    currentTutorial: {
-                        ...prevState.currentTutorial,
-                        published: status,
-                    },
-                    message: "The status was updated successfully!",
-                }));
+                if (status == true) {
+                    this.setState((prevState) => ({
+                        currentTutorial: {
+                            ...prevState.currentTutorial,
+                            published: status,
+                        },
+                        message: "เผยแพร่โครงการสำเร็จ !!",
+                    }));
+                }else{
+                    this.setState((prevState) => ({
+                        currentTutorial: {
+                            ...prevState.currentTutorial,
+                            published: status,
+                        },
+                        message: "ยกเลิกการเผยแพร่โครงการสำเร็จ !!",
+                    }));
+                }
+
             })
             .catch((e) => {
                 console.log(e);
@@ -102,8 +113,7 @@ export default class AdminDataManage extends Component {
                             <span>
                                 {currentTutorial.location}
                             </span>
-                            <span>
-                                map
+                            <span className=" text-red-400 ml-2 fas fa-map-marked-alt">
                             </span>
                         </p>
                         <p>
@@ -148,7 +158,7 @@ export default class AdminDataManage extends Component {
 
                         {currentTutorial.published ? (
                             <button
-                                className="m-3 bg-green-500 btn"
+                                className="m-3 bg-yellow-500 btn"
                                 onClick={() => this.updatePublished(false)}
                             >
                                 UnPublish
@@ -169,7 +179,7 @@ export default class AdminDataManage extends Component {
                             Delete
                         </button>
 
-                        <p>{this.state.message}</p>
+                        <p className=" text-green-500">{this.state.message}</p>
                     </div>
                 ) : (
                     <div>
