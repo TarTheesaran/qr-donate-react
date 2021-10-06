@@ -197,7 +197,7 @@ export default class AdminDataManage extends Component {
                         ) : (
                             <div>
                                 <p className="text-right">โปรดเลือกโครงการของท่าน....</p>
-                        </div>
+                            </div>
                 )}
             </div>
         );

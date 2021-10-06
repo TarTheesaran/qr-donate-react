@@ -73,14 +73,33 @@ export default class AdminStorage extends React.Component {
     }
 
     render() {
-        const style = {
-
-        };
         return (
-            <div style={style} className={'w-14 text-md sm:text-lg'}>
+            <div className={'hidden'}>
+                 <div class="flex items-center justify-start w-full border-4 border-dashed p-4 mt-2 ml-2">
+                    <label class="flex flex-col rounded-lg w-96 h-36 p-10 group text-center"   
+                        style={{ 
+                                backgroundImage: `url(${this.state.img_poster_url})`,
+                                backgroundRepeat: "no-repeat",
+                                backgroundSize: "cover",
+                                backgroundSize:"100% auto",
+                                opacity:"1",
+                                backgroundPosition:"center",
+                                }
+                    }>
+                        <div class="h-full w-full text-center flex flex-col items-center justify-center opacity-20 text-gray-900">
+                            <i className="fas fa-cloud-upload-alt text-7xl"></i>
+                            <p class="pointer-none text-gray-900 ">
+                                Upload here.
+                            </p>
+                        </div>
+                        <AdminStorage urlFirebaseStorage={this.onChangeImgPoster} />
+                    </label>
+                    </div>
                 <input type="file" onChange={this.handleUpload} accept="image/png, image/jpeg" />
-                <progress className="hidden" value={this.state.progress} max="100"/>
+                {/* <progress className="hidden" value={this.state.progress} max="100"/> */}
             </div>
+            
+            
         )
     }
 }
