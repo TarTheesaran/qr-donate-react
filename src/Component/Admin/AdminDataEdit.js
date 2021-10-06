@@ -1,23 +1,14 @@
 import React, { Component } from "react";
 import AdminData from "../../services/AdminData";
 import AdminStorage from "./AdminStorage";
+import { db } from '../..//firebase';
 
-export default class AdminDataAdd extends Component {
+export default class AdminDataEdit extends Component {
     constructor(props) {
-        super(props);
-        this.onChangeProjectName = this.onChangeProjectName.bind(this);
-        this.onChangeProjectAgency = this.onChangeProjectAgency.bind(this);
-        this.onChangeLocationLat = this.onChangeLocationLat.bind(this);
-        this.onChangeLocationLng = this.onChangeLocationLng.bind(this);
-        this.onChangeDescription = this.onChangeDescription.bind(this);
-        this.onChangeContact = this.onChangeContact.bind(this);
-        this.onChangeCategory = this.onChangeCategory.bind(this);
-        this.onChangeImgPoster = this.onChangeImgPoster.bind(this);
-        this.onChangeImgQRCode = this.onChangeImgQRCode.bind(this);
-        this.saveProject = this.saveProject.bind(this);
-        this.newTutorial = this.newTutorial.bind(this);
-
-        this.state = {
+       super(props);
+       this.state = {
+            project: [],
+            key: this.props.match.params.id,
             project_name: "",
             project_agency: "",
             locationlat: "",
@@ -28,14 +19,67 @@ export default class AdminDataAdd extends Component {
             img_poster_url: "",
             img_qrcode_url: "",
             published: false,
-
             submitted: false,
         };
+        this.getDataFromFirebase = this.getDataFromFirebase.bind(this);
+        this.onChangeProjectName = this.onChangeProjectName.bind(this);
+        this.onChangeProjectAgency = this.onChangeProjectAgency.bind(this);
+        this.onChangeLocationLat = this.onChangeLocationLat.bind(this);
+        this.onChangeLocationLng = this.onChangeLocationLng.bind(this);
+        this.onChangeDescription = this.onChangeDescription.bind(this);
+        this.onChangeContact = this.onChangeContact.bind(this);
+        this.onChangeCategory = this.onChangeCategory.bind(this);
+        this.onChangeImgPoster = this.onChangeImgPoster.bind(this);
+        this.onChangeImgQRCode = this.onChangeImgQRCode.bind(this);
+        this.updateTutorial = this.updateTutorial.bind(this);
+    }
+
+
+    componentDidMount() {
+        db.ref(`/project`).on("value", this.getDataFromFirebase);
+    }
+
+    getDataFromFirebase(items) {
+        let project = [];
+        items.forEach((item) => {
+            let key = item.key;
+            let data = item.val();
+            if (key == this.props.match.params.id) {
+                let lat = parseFloat(data.location.split(',')[0]);
+                let lng = parseFloat(data.location.split(',')[1]);
+                console.log(lat);
+                console.log(lng);
+                project.push({
+                    key: key,
+                    project_name: data.project_name,
+                    project_agency: data.project_agency,
+                    location_lat: lat,
+                    location_lng: lng,
+                    description: data.description,
+                    contact: data.contact,
+                    category: data.category,
+                    img_poster_url: data.img_poster_url,
+                    img_qrcode_url: data.img_qrcode_url,
+                    published: data.published,
+                });
+            }
+        });
+        this.setState({
+            project_name: project[0].project_name,
+            project_agency: project[0].project_agency,
+            location_lat: project[0].location_lat,
+            location_lng: project[0].location_lng,
+            description: project[0].description,
+            contact: project[0].contact,
+            category: project[0].category,
+            img_poster_url: project[0].img_poster_url,
+            img_qrcode_url: project[0].img_qrcode_url,
+        });
     }
 
     onChangeProjectName(e) {
         this.setState({
-            project_name: e.target.value,
+            project_name: e.target.value,   
         });
     }
     onChangeProjectAgency(e) {
@@ -78,11 +122,13 @@ export default class AdminDataAdd extends Component {
             img_qrcode_url: url,
         });
     }
-    saveProject() {
-        let data = {
+
+
+    updateTutorial() {
+        const data = {
             project_name: this.state.project_name,
             project_agency: this.state.project_agency,
-            location: this.state.locationlat+','+this.state.locationlng,
+            location: this.state.location_lat+','+this.state.location_lng,
             description: this.state.description,
             contact: this.state.contact,
             category: this.state.category,
@@ -90,34 +136,22 @@ export default class AdminDataAdd extends Component {
             img_qrcode_url: this.state.img_qrcode_url,
             published: true
         };
-
-        AdminData.create(data)
-            .then(() => {
-                console.log("Created new item successfully!");
-                this.setState({
-                    submitted: true,
-                });
-            })
-            .catch((e) => {
-                console.log(e);
+    
+        AdminData.update(this.state.key, data)
+          .then(() => {
+            this.setState({
+              message: "The tutorial was updated successfully!",
             });
-    }
-    newTutorial() {
-        this.setState({
-            project_name: "",
-            project_agency: "",
-            locationlat: "",
-            locationlng: "",
-            description: "",
-            contact: "",
-            category: "โควิด-19",
-            img_poster_url: "",
-            img_qrcode_url: "",
-            published: false,
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+      }
 
-            submitted: false,
-        });
-    }
+
+
+    
+
 
     render() {
         const addPageStyles = {
@@ -131,11 +165,6 @@ export default class AdminDataAdd extends Component {
             minHeight:"100vh"};
         return (
             <article className="" style={addPageStyles}>
-            {this.state.submitted ? (
-                <div>
-
-                </div>
-             ) : (
             <div className="mt-28 mb-8 bg-gray-100 p-5 xs:p-6 sm:p-8 md:p-10 rounded-3xl pt-6 w-full xs:w-11/12 sm:w-10/12 md:w-9/12 lg:w-8/12 xl:w-7/12"> 
                 <div>   
                     <h2 className="text-4xl mb-3 font-medium text-center">
@@ -178,7 +207,7 @@ export default class AdminDataAdd extends Component {
                             id="locationlat"
                             required
                             name="locationlat"
-                            value={this.state.locationlat}
+                            value={this.state.location_lat}
                             onChange={this.onChangeLocationLat}
                         />
                     </div>
@@ -191,7 +220,7 @@ export default class AdminDataAdd extends Component {
                             id="locationlng"
                             required
                             name="locationlng"
-                            value={this.state.locationlng}
+                            value={this.state.location_lng}
                             onChange={this.onChangeLocationLng}
                         />
                     </div>
@@ -259,12 +288,11 @@ export default class AdminDataAdd extends Component {
                     </div>
                 </div>
                 <div className="flex flex-row-reverse -mb-5 mt-4">
-                    <button onClick={this.saveProject} className="cursor-pointer bg-green-600 hover:bg-green-500 focus:bg-green-800 shadow-xl px-5 py-2 inline-block  text-green-50 hover:text-white rounded">
+                    <button onClick={this.updateTutorial} className="cursor-pointer bg-green-600 hover:bg-green-500 focus:bg-green-800 shadow-xl px-5 py-2 inline-block  text-green-50 hover:text-white rounded">
                         Submit
                     </button>
                 </div>
             </div>
-            )}
         </article >
         );
     }

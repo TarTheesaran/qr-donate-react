@@ -3,6 +3,7 @@ import './Admin.css'
 import AdminData from "../../services/AdminData";
 import AdminDataManage from "./AdminDataManage";
 import { Link } from 'react-router-dom';
+
 export default class About extends React.Component {
     constructor(props) {
         super(props);
@@ -28,7 +29,6 @@ export default class About extends React.Component {
 
     onDataChange(items) {
         let tutorials = [];
-
         items.forEach((item) => {
             let key = item.key;
             let data = item.val();
@@ -122,10 +122,11 @@ export default class About extends React.Component {
                     <section>
                         <header>
                             <h1>รายละเอียด</h1>
-                            <a href="./editDataPage.html">
+                            {/* <a href="./editDataPage.html">
                                 <i className='editIcon fas fa-edit text-4xl'></i>
-                            </a>
+                            </a> */}
                         </header>
+                        
                         <div class="detailBlock">
                             {currentTutorial ? (
                                 <AdminDataManage
@@ -138,9 +139,7 @@ export default class About extends React.Component {
                                     <p>โปรดเลือกโครงการของท่าน....    </p>
                                 </div>
                             )}
-
                         </div>
-
                     </section>
                 </article >
             </div>

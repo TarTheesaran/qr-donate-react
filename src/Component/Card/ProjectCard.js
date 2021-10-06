@@ -1,14 +1,98 @@
 import React from 'react';
 import AdminData from "../../services/AdminData";
 import { Link } from 'react-router-dom';
+
+const IconCategory = ({ categoryName }) => {
+        var iconCategory = "far fa-times-circle w-10 h-10 "
+        var styleCategory = {
+            color: 'black',
+            backgroundColor: "LightGray"
+        }
+        if(categoryName === "โควิด-19"){
+            iconCategory = "fas fa-virus w-10 h-10 "
+            styleCategory = {
+                color: 'red',
+                backgroundColor: "LemonChiffon"
+            }
+        }else if(categoryName === "เด็ก"){
+            iconCategory = "fas fa-baby w-10 h-10 "
+            styleCategory = {
+                color: 'Beige',
+                backgroundColor: "SteelBlue"
+            }
+        }else if(categoryName === "สตรี"){
+            iconCategory = "fas fa-female w-10 h-10 text-4xl"
+            styleCategory = {
+                color: 'LavenderBlush',
+                backgroundColor: " HotPink"
+            }
+        }else if(categoryName === "ผู้สูงอายุ"){
+            iconCategory = "fas fa-blind w-10 h-10 pl-2"
+            styleCategory = {
+                color: 'Lavender',
+                backgroundColor: " BlueViolet"
+            }
+        }else if(categoryName === "ผู้ป่วยและผู้พิการ"){
+            iconCategory = "fas fa-wheelchair w-10 h-10  "
+            styleCategory = {
+                color: 'AliceBlue',
+                backgroundColor: "SeaGreen"
+            }
+        }else if(categoryName === "ศาสนา"){
+            iconCategory = "fas fa-praying-hands w-10 h-10 text-3xl"
+            styleCategory = {
+                color: 'Beige',
+                backgroundColor: "DarkOrange"
+            }
+        }else if(categoryName === "สัตว์ป่าและธรรมชาติ"){
+            iconCategory = "fas fa-leaf w-10 h-10 "
+            styleCategory = {
+                color: 'HoneyDew',
+                backgroundColor: "LimeGreen"
+            }
+        }else if(categoryName === "สังคมและชุมชน"){
+            iconCategory = "fas fa-users w-10 h-10 text-3xl"
+            styleCategory = {
+                color: 'Beige',
+                backgroundColor: "Tomato"
+            }
+        }else if(categoryName === "โรงพยาบาล"){
+            iconCategory = "fas fa-hospital w-10 h-10"
+            styleCategory = {
+                color: 'LavenderBlush',
+                backgroundColor: "Crimson"
+            }
+        }else if(categoryName === "การศึกษา"){
+            iconCategory = "fas fa-graduation-cap w-10 h-10  text-3xl"
+            styleCategory = {
+                color: 'MintCream',
+                backgroundColor: "MidnightBlue"
+            }
+        }else if(categoryName === "สัตว์จรจัด"){
+            iconCategory = "fas fa-dog w-10 h-10"
+            styleCategory = {
+                color: ' Beige',
+               backgroundColor: "Peru"
+           }
+        }else{
+            iconCategory = "far fa-times-circle w-10 h-10 "
+            styleCategory = {
+                color: 'black',
+                backgroundColor: "gray"
+            }
+    }
+    return  <p class="absolute right-0 top-0  rounded-tr-lg rounded-bl-3xl p-2 group  text-4xl text-center"  style={styleCategory}>
+                <i className={iconCategory}></i>
+            </p>;
+}
+
+
 export default class ProjectCard extends React.Component {
     constructor(props) {
         super(props);
         this.refreshList = this.refreshList.bind(this);
         this.setActiveTutorial = this.setActiveTutorial.bind(this);
-
         this.onDataChange = this.onDataChange.bind(this);
-
         this.state = {
             tutorials: [],
             currentTutorial: null,
@@ -75,22 +159,23 @@ export default class ProjectCard extends React.Component {
             display: 'flex',
             alignItems: 'center'
         }
+        
         return (
             <article className="w-100%">
-                <div className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+                <div className="flex flex-wrap mx-auto justify-center">
                     {tutorials &&
                         tutorials.map((tutorial, index) => (
                             // <div class="max-w-7xl rounded overflow-hidden shadow-lg relative" style={{height: 380}}>
-                            <div class="max-w-7xl rounded-lg overflow-hidden shadow-lg relative bg-white">
-                                <img class="relative object-cover w-full h-44" src={tutorial.img_poster_url} alt="Sunset in the mountains" />
-                                <p class="absolute right-0 top-0 bg-white  rounded-tr-lg rounded-bl-3xl p-2 cursor-pointer group bg-yellow-100">
-                                    <i className='fas fa-virus text-4xl text-red-600 w-10 h-10 text-center'></i>
-                                </p>
+                            <div class=" w-86 rounded-lg overflow-hidden shadow-lg relative bg-white mx-6 my-7">
+                                <img class="relative object-cover  w-96  h-36" src={tutorial.img_poster_url} alt="" />
+                                <IconCategory
+                                     categoryName={tutorial.category}
+                                />
                                 <div class="px-6 py-4 pb-20 h-auto ">
-                                    <div class=" font-medium text-xl mb-2"  style={{ textIndent: 10 }}>
+                                    <div class=" font-medium text-2xl mb-2"  style={{ textIndent: 10 }}>
                                         {tutorial.project_name}
                                     </div>
-                                    <p class="text-gray-700 text-md overflow-ellipsis overflow-hidden ...">
+                                    <p class="text-gray-700 text-lg overflow-ellipsis overflow-hidden ...">
                                          {tutorial.project_agency}
                                     </p>
                                 </div>

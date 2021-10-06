@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AdminData from "../../services/AdminData";
+import { Link } from 'react-router-dom';
 
 export default class AdminDataManage extends Component {
     constructor(props) {
@@ -8,7 +9,7 @@ export default class AdminDataManage extends Component {
         this.deleteTutorial = this.deleteTutorial.bind(this);
 
         this.state = {
-            currentTutorial: {
+            project_data: {
                 key: null,
                 project_name: "",
                 project_agency: "",
@@ -21,45 +22,46 @@ export default class AdminDataManage extends Component {
                 published: false,
             },
             message: "",
+            show: false
         };
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
         const { tutorial } = nextProps;
-        if (prevState.currentTutorial.key !== tutorial.key) {
+        if (prevState.project_data.key !== tutorial.key) {
             return {
-                currentTutorial: tutorial,
+                project_data: tutorial,
                 message: ""
             };
         }
 
-        return prevState.currentTutorial;
+        return prevState.project_data;
     }
 
     componentDidMount() {
         this.setState({
-            currentTutorial: this.props.tutorial,
+            project_data: this.props.tutorial,
         });
     }
 
 
     updatePublished(status) {
-        AdminData.update(this.state.currentTutorial.key, {
+        AdminData.update(this.state.project_data.key, {
             published: status,
         })
             .then(() => {
                 if (status == true) {
                     this.setState((prevState) => ({
-                        currentTutorial: {
-                            ...prevState.currentTutorial,
+                        project_data: {
+                            ...prevState.project_data,
                             published: status,
                         },
                         message: "เผยแพร่โครงการสำเร็จ !!",
                     }));
                 }else{
                     this.setState((prevState) => ({
-                        currentTutorial: {
-                            ...prevState.currentTutorial,
+                        project_data: {
+                            ...prevState.project_data,
                             published: status,
                         },
                         message: "ยกเลิกการเผยแพร่โครงการสำเร็จ !!",
@@ -74,7 +76,7 @@ export default class AdminDataManage extends Component {
 
 
     deleteTutorial() {
-        AdminData.delete(this.state.currentTutorial.key)
+        AdminData.delete(this.state.project_data.key)
             .then(() => {
                 this.props.refreshList();
             })
@@ -83,19 +85,23 @@ export default class AdminDataManage extends Component {
             });
     }
 
+    handleClick() {
+        this.setState({ show: true });
+      }
+
     render() {
-        const { currentTutorial } = this.state;
+        const { project_data,show } = this.state;
 
         return (
             <div>
-                {currentTutorial ? (
+                {project_data ? (
                     <div className="edit-form">
                         <p>
                             <span>
                                 ชื่อโครงการ:
                             </span>
                             <span>
-                                {currentTutorial.project_name}
+                                {project_data.project_name}
                             </span>
                         </p>
                         <p>
@@ -103,7 +109,7 @@ export default class AdminDataManage extends Component {
                                 ชื่อหน่วยงาน:
                             </span>
                             <span>
-                                {currentTutorial.project_agency}
+                                {project_data.project_agency}
                             </span>
                         </p>
                         <p>
@@ -111,7 +117,7 @@ export default class AdminDataManage extends Component {
                                 พิกัดหน่วยงาน
                             </span>
                             <span>
-                                {currentTutorial.location}
+                                {project_data.location}
                             </span>
                             <span className=" text-red-400 ml-2 fas fa-map-marked-alt">
                             </span>
@@ -119,7 +125,7 @@ export default class AdminDataManage extends Component {
                         <p>
                             <span>คำอธิบาย:</span>
                             <span>
-                                {currentTutorial.description}
+                                {project_data.description}
                             </span>
                         </p>
                         <p>
@@ -127,7 +133,7 @@ export default class AdminDataManage extends Component {
                                 ข้อมูลติดต่อ:
                             </span>
                             <span>
-                                {currentTutorial.contact}
+                                {project_data.contact}
                             </span>
                         </p>
                         <p>
@@ -135,7 +141,7 @@ export default class AdminDataManage extends Component {
                                 หมวดหมู่:
                             </span>
                             <span>
-                                {currentTutorial.category}
+                                {project_data.category}
                             </span>
                         </p>
                         <p>
@@ -143,7 +149,7 @@ export default class AdminDataManage extends Component {
                                 รูปภาพโปสเตอร์:
                             </span>
                             <span>
-                                <a id="img_qrcode" target="_blank" href={currentTutorial.img_poster_url}>แสดงรูปภาพ</a>
+                                <a id="img_qrcode" target="_blank" href={project_data.img_poster_url}>แสดงรูปภาพ</a>
                             </span>
 
                         </p>
@@ -152,39 +158,46 @@ export default class AdminDataManage extends Component {
                                 รูปภาพ QR-code:
                             </span>
                             <span>
-                                <a id="img_qrcode" target="_blank" href={currentTutorial.img_qrcode_url}>แสดงรูปภาพ</a>
+                                <a id="img_qrcode" target="_blank" href={project_data.img_qrcode_url}>แสดงรูปภาพ</a>
                             </span>
                         </p>
-
-                        {currentTutorial.published ? (
+                        <div className="flex flex-row-reverse">
+                        {project_data.published ? (
                             <button
-                                className="m-3 bg-yellow-500 btn"
+                            className="cursor-pointer m-2 bg-red-400 hover:bg-red-300 focus:bg-red-900 shadow-lg px-5 py-2 inline-block  text-green-50 hover:text-white rounded"
                                 onClick={() => this.updatePublished(false)}
                             >
                                 UnPublish
                             </button>
                         ) : (
                             <button
-                                className="m-3 bg-green-500 btn"
+                            className="cursor-pointer m-2 bg-green-500 hover:bg-green-500 focus:bg-green-800 shadow-lg px-5 py-2 inline-block  text-green-50 hover:text-white rounded"
                                 onClick={() => this.updatePublished(true)}
                             >
                                 Publish
                             </button>
                         )}
+                       <Link target="_blank" to={`/editproeject/${this.state.project_data.key}`}>
+                            <button  className="cursor-pointer m-2 bg-yellow-500 hover:bg-yellow-400 focus:bg-yellow-800 shadow-lg px-5 py-2 inline-block  text-green-50 hover:text-white rounded">
+                                Edit
+                            </button>
+                        </Link>
+                       
 
                         <button
-                            className="m-3 bg-red-500 btn"
+                             className="cursor-pointer m-2 bg-red-600 hover:bg-red-500 focus:bg-red-800 shadow-lg px-5 py-2 inline-block  text-green-50 hover:text-white rounded"
                             onClick={this.deleteTutorial}
                         >
                             Delete
                         </button>
 
+                        </div>
                         <p className=" text-green-500">{this.state.message}</p>
-                    </div>
-                ) : (
-                    <div>
-                        <p>โปรดเลือกโครงการของท่าน....</p>
-                    </div>
+                        </div>
+                        ) : (
+                            <div>
+                                <p className="text-right">โปรดเลือกโครงการของท่าน....</p>
+                        </div>
                 )}
             </div>
         );

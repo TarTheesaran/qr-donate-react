@@ -81,7 +81,7 @@ export default class ProjectDetail extends React.Component {
             img_qrcode_url } = this.state;
         return (
             <article className="mr-2 ml-2 bg-gray-100" >
-                <div className="card mt-5 md:mt-12 max-w-6xl  border-1 border-gray-400 rounded-3xl mr-auto ml-auto  z-30 relative bg-white">
+                <div className="card mt-5 md:mt-12 max-w-screen-xl  border-1 border-gray-400 rounded-3xl mr-auto ml-auto  z-30 relative bg-white">
                     <img className=" relative z-5 rounded-t-3xl" src={this.state.img_poster_url} width="100%" />
                     <div className="h-32 -mt-32 z-6  relative" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0), rgba(255,255,255,1))" }} />
                     <div className="p-14 pt-10" style={{ minHeight: 360 }}>
@@ -105,7 +105,7 @@ export default class ProjectDetail extends React.Component {
                             </p>
                         </div>
                     </div>
-                    <div className="mt-12 md:mt-18">
+                    <div  className="mt-12 md:mt-18">
                         <GoogleMapShow locationlat={this.state.location_lat} locationlng={this.state.location_lng}></GoogleMapShow>
                     </div>
                 </div >

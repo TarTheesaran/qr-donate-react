@@ -77,9 +77,9 @@ export default class AdminStorage extends React.Component {
 
         };
         return (
-            <div style={style} className={''}>
+            <div style={style} className={'w-14 text-md sm:text-lg'}>
                 <input type="file" onChange={this.handleUpload} accept="image/png, image/jpeg" />
-                <progress value={this.state.progress} max="100"/>
+                <progress className="hidden" value={this.state.progress} max="100"/>
             </div>
         )
     }

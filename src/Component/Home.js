@@ -11,7 +11,7 @@ export default class Home extends React.Component {
 
         }
         return (
-            <article className="bg-gray-100 p-3 pt-20 sm:p-6 sm:pt-24 md:p-12 md:pt-32">
+            <article className=" pt-16 sm:pt-18 md:pt-24">
                 <div>
                     <ProjectCard></ProjectCard>
                 </div>
