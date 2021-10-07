@@ -3,13 +3,13 @@ import "firebase/database";
 import 'firebase/storage';
 
 let config = {
-    apiKey: "AIzaSyBu6SFKlJ-pGstkjtd_I__zqizSdwrcpfU",
-    authDomain: "qr-donate-react.firebaseapp.com",
-    databaseURL: "https://qr-donate-react-default-rtdb.firebaseio.com",
-    projectId: "qr-donate-react",
-    storageBucket: "qr-donate-react.appspot.com",
-    messagingSenderId: "624039897159",
-    appId: "1:624039897159:web:d74b6be6ace4f9ef30e962"
+    apiKey: "AIzaSyAFpfdPUv7weX-zGRpjG7_kMrOdtJoTRWI",
+    authDomain: "qr-donate-wa21-11.firebaseapp.com",
+    databaseURL: "https://qr-donate-wa21-11-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "qr-donate-wa21-11",
+    storageBucket: "qr-donate-wa21-11.appspot.com",
+    messagingSenderId: "359529706826",
+    appId: "1:359529706826:web:8b5173836b49fff4097db3"
 };
 
 firebase.initializeApp(config);
