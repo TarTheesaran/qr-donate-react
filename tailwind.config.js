@@ -25,6 +25,7 @@ module.exports = {
     translate: ['responsive', 'group-hover', 'group-focus', 'hover', 'focus'],
     textColor: ['responsive', 'hover', 'group-hover','group-focus', 'focus'],
     opacity: ['active', 'hover', 'group-hover','group-focus', 'focus'],
+    borderColor: ['group-focus','hover', 'focus'],
   },
   plugins: [],
 }

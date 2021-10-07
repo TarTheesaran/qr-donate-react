@@ -102,7 +102,7 @@ export default class About extends React.Component {
                       onClick={() => this.setActiveTutorial(tutorial, index)}
                       key={index}
                     >
-                      <div class="dataCard">
+                      <div className="dataCard">
                         <div>
                           <h3>{tutorial.project_name}</h3>
                           <p>{tutorial.project_agency}</p>
@@ -121,7 +121,7 @@ export default class About extends React.Component {
                             </a> */}
             </header>
 
-            <div class="detailBlock">
+            <div className="detailBlock">
               {currentTutorial ? (
                 <AdminDataManage
                   tutorial={currentTutorial}

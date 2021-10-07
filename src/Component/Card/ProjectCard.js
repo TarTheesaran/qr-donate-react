@@ -30,7 +30,7 @@ const IconCategory = ({ categoryName }) => {
     iconCategory = "fas fa-blind w-10 h-10 pl-2";
     styleCategory = {
       color: "white",
-      backgroundColor: "#754cb",
+      backgroundColor: "#9754cb",
     };
   } else if (categoryName === "ผู้ป่วยและผู้พิการ") {
     iconCategory = "fas fa-wheelchair w-10 h-10  ";
@@ -163,11 +163,11 @@ export default class ProjectCard extends React.Component {
     const { tutorials } = this.state;
 
     return (
-      <article className="" >
+      <article className="mt-4" >
         <div className="flex flex-wrap mx-auto justify-center">
           {tutorials &&
             tutorials.map((tutorial, index) => (
-              <div className=" w-86 rounded-lg overflow-hidden shadow-lg relative bg-white mx-6 my-7" key={index}>
+              <div className=" w-86 rounded-lg overflow-hidden shadow-lg relative bg-white xs:mx-4 lg:m-6 m-5 xs:my-4 lg:my-7" key={index}>
                 <img
                   className="relative object-cover  w-96  h-36"
                   src={tutorial.img_poster_url}
@@ -177,7 +177,7 @@ export default class ProjectCard extends React.Component {
                 <div className="px-6 py-4 pb-20 h-auto ">
                   <div
                     className=" font-medium text-2xl mb-2"
-                    style={{ textIndent: 10 }}
+       
                   >
                     {tutorial.project_name}
                   </div>
@@ -187,12 +187,12 @@ export default class ProjectCard extends React.Component {
                 </div>
                 <div className="px-6 pt-2 pb-2 text-right absolute bottom-2 right-0">
                   <a target="_blank" rel="noreferrer" href={tutorial.img_qrcode_url}>
-                    <span className="inline-block bg-green-200 rounded-full px-4 py-2 text-mm font-medium text-gray-700 mr-2 mb-2">
-                      <i className="fas fa-qrcode text-green-800 "> QR</i>
+                    <span className="inline-block bg-green-400 rounded-full px-4 py-2 text-mm font-medium text-white mr-2 mb-2">
+                      <i className="fas fa-qrcode "> QR</i>
                     </span>
                   </a>
                   <Link target="_blank" to={`/detail/${tutorial.key}`}>
-                    <span className="inline-block bg-blue-200 rounded-full px-5 py-2 text-md font-medium text-blue-800 mr-2 mb-2">
+                    <span className="inline-block bg-blue-500 rounded-full px-5 py-2 text-md font-medium text-white mr-2 mb-2">
                       รายละเอียด
                     </span>
                   </Link>

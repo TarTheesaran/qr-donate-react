@@ -82,7 +82,7 @@ export default class ProjectDetail extends React.Component {
             alt ={this.state.project_name + this.state.project_agency + " poster image"}
           />
           <div
-            className="h-32 -mt-32 z-6  relative"
+            className="h-16 -mt-16 z-6  relative"
             style={{
               background:
                 "linear-gradient(to bottom, rgba(0,0,0,0), rgba(255,255,255,1))",
@@ -94,7 +94,7 @@ export default class ProjectDetail extends React.Component {
               src={this.state.img_qrcode_url}
               alt ={this.state.project_name + this.state.project_agency + " qr-code image"}
             />
-            <h2 className="text-4xl text-gray-900" style={{ textIndent: 10 }}>
+            <h2 className="text-4xl text-gray-900">
               {this.state.project_name}
             </h2>
             <h3 className="text-3xl text-gray-600 font-normal mt-2">

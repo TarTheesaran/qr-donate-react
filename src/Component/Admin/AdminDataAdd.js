@@ -251,11 +251,11 @@ export default class AdminDataAdd extends Component {
             </div>
             <div className="text-xl text-gray-900">
               <p>เลือกหมวดหมู่</p>
-              <label htmlFor="category" class="hidden  ">
+              <label htmlFor="category" className="hidden  ">
                 โควิด-19
               </label>
               <select
-                class=" w-/12 block px-4 py-2 mt-0 p-0 text-gray-700 bg-white border border-gray-300 rounded-xl shadow"
+                className=" w-/12 block px-4 py-2 mt-0 p-0 text-gray-700 bg-white border border-gray-300 rounded-xl shadow"
                 value={this.state.category}
                 onChange={this.onChangeCategory}
               >

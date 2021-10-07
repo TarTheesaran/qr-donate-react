@@ -9,6 +9,7 @@ import Navigation from "./Component/Navigation";
 import Admin from "./Component/Admin/Admin";
 import AdminDataAdd from "./Component/Admin/AdminDataAdd";
 import AdminDataEdit from "./Component/Admin/AdminDataEdit";
+import MainLogin from "./Component/Admin/login/MainLogin";
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
           <Route exact={true} path={"/addproject"} component={AdminDataAdd} />
           <Route exact={true} path="/detail/:id" component={ProjectDetail} />
           <Route exact={true} path="/editproeject/:id" component={AdminDataEdit}/>
+          <Route exact={true} path="/login" component={MainLogin}/>
       </div>
     );
   }
