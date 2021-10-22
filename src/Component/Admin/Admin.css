@@ -1,0 +1,338 @@
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 70px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(194, 194, 194);
+  border-radius: 70px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(119, 119, 119);
+}
+
+.pageblock {
+  background: #3b4a8c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: start;
+  justify-self: start;
+  position: relative;
+  z-index: 5;
+  background-attachment: fixed;
+  padding: 0px 5px;
+  max-width: auto;
+  min-height: 100vh;
+}
+.pageblock article {
+  display: grid;
+  margin: auto 16px;
+  justify-self: start;
+  grid-template-columns: 700px 600px;
+  grid-gap: 20px;
+  padding-top: 0px;
+  z-index: 0;
+  align-items: start;
+  justify-content: center;
+  margin-top: 90px;
+}
+
+.pageblock article section {
+  background-color: #ebebeb;
+  border-radius: 12px;
+  padding: 20px 20px;
+  height: fit-content;
+}
+.pageblock article section header {
+  padding: 0px 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pageblock header h1 {
+  font-size: 33px;
+  margin-left: 10px;
+  line-height: 1.2em;
+}
+
+.pageblock header a {
+  margin: auto;
+  margin-right: 0px;
+}
+.dataListBlock {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  gap: 10px;
+  max-height: 70vh;
+  min-height: 40px;
+}
+
+.dataCard {
+  background-color: rgb(255, 255, 255);
+  padding: 5px 15px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 630px;
+  gap: 4px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(255, 255, 255);
+}
+
+.detailBlock {
+  margin-top: 10px;
+  padding: 16px 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.dataCard h3 {
+  font-size: 22px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 100%;
+  line-height: 1.4em;
+  color: black;
+  font-weight: 500;
+}
+
+.pageblock h3 + p {
+  font-size: 18px;
+  color: rgb(78, 78, 78);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+.detailBlock p span:nth-child(1) {
+  font-weight: 500;
+  line-height: 2em;
+  margin-right: 8px;
+}
+
+.detailBlock p {
+  font-size: 18px;
+}
+.deleteDataButton {
+  background-color: #ff4a32;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+}
+.deleteDataButton:hover {
+  background-color: #bf3b2a;
+}
+.deleteDataButton:active {
+  background-color: rgb(198, 198, 198);
+  color: black;
+}
+input:checked + .dataCard {
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(59, 59, 59);
+}
+
+.dataListBlock input {
+  display: none;
+}
+
+.plusIcon {
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg)
+    brightness(100%) contrast(119%);
+  width: 40px;
+  height: auto;
+  margin: auto;
+}
+
+.plusIcon:hover {
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg)
+    brightness(80%) contrast(119%);
+}
+
+.plusIcon:active {
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg)
+    brightness(30%) contrast(50%);
+}
+
+.editIcon {
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(18deg)
+    brightness(100%) contrast(119%);
+  width: 40px;
+  height: auto;
+  margin: auto;
+}
+
+.editIcon:hover {
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(18deg)
+    brightness(80%) contrast(119%);
+}
+
+.editIcon:active {
+  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(18deg)
+    brightness(30%) contrast(50%);
+}
+
+#img_poster,
+#img_qrcode {
+  color: blue;
+}
+#img_poster:hover,
+#img_qrcode:hover {
+  color: darkblue;
+}
+#img_poster:active,
+#img_qrcode:active {
+  color: rgb(94, 0, 0);
+}
+@media screen and (max-width: 1350px) {
+  .pageblock article {
+    grid-template-columns: 600px 600px;
+  }
+  .dataCard {
+    grid-template-columns: 515px;
+  }
+}
+
+@media screen and (max-width: 1225px) {
+  .pageblock article {
+    grid-template-columns: 500px auto;
+  }
+  .dataCard {
+    grid-template-columns: 415px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .pageblock article {
+    grid-template-columns: 450px 400px;
+  }
+  .dataCard {
+    grid-template-columns: 365px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .pageblock article {
+    grid-template-columns: auto 360px;
+  }
+  .dataCard {
+    grid-template-columns: 345px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .pageblock article {
+    grid-template-columns: auto auto;
+  }
+  .dataCard {
+    grid-template-columns: 300px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .pageblock article {
+    grid-template-columns: 600px;
+  }
+  .dataCard {
+    grid-template-columns: 515px;
+  }
+  .pageblock h3 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .pageblock article {
+    grid-template-columns: auto;
+  }
+  .dataCard {
+    grid-template-columns: auto;
+  }
+  .pageblock h1 {
+    font-size: 26px;
+  }
+  .pageblock h3 {
+    font-size: 18px;
+    width: 75vw;
+  }
+  .pageblock h3 + p {
+    font-size: 15px;
+    width: 75vw;
+  }
+}
+@media screen and (max-width: 400px) {
+  .pageblock h1 {
+    font-size: 24px;
+  }
+  .pageblock h3 {
+    font-size: 18px;
+    width: 70vw;
+  }
+  .pageblock h3 + p {
+    font-size: 15px;
+    width: 70vw;
+  }
+  .dataCard {
+    grid-template-columns: auto;
+  }
+  .deleteDataButton {
+    padding: 5px 15px;
+    font-size: 12px;
+    margin-left: 0px !important;
+  }
+  .detailBlock p {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 325px) {
+  .pageblock h1 {
+    font-size: 22px;
+  }
+  .pageblock h3 {
+    font-size: 15px;
+    width: 65vw;
+  }
+  .pageblock h3 + p {
+    font-size: 12px;
+    width: 65vw;
+  }
+  .detailBlock p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .pageblock {
+    padding: 0px;
+  }
+}
+@media screen and (max-height: 550px) {
+  .dataListBlock {
+    max-height: 550px;
+  }
+}

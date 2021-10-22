@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" style="background-image: url('./images/Doctor.png');"></html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem5</title>
+    <link rel="stylesheet" href="./styles/problem5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Mitr&display=swap&fbclid=IwAR28dPKH6LP-Gs1IegYTpTIidzpPB9jWzKzePfmi1AUWe-QZY6hOlTkVMRc">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav>
+            <input type="checkbox" id="show-menu">
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+            <div class="content">
+                <div class="logo">
+                    <p>QR-Donate</p>
+                </div>
+                <ul class="links">
+                    <!--link  -->
+                    <li><a class="" href="./problem5_home.html" onclick="">หน้าหลัก</a></li>
+                    <li><a class="" href="#0" onclick="">เกี่ยวกับ QR-Donate</a></li>
+                    <li><a class="" href="#0" onclick="">วิธีการใช้งาน</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <article class="homepage">
+        <div class="page">
+
+            <div class="imgBlockFullPage">
+                <img class="img2" src="./images/qr-code.PNG">
+            </div>
+    
+            <header>
+                <h1>โครงการจัดซื้อเครื่องมือทางการแพทย์</h1>
+                <h3>สภากาชาดไทย</h3>
+            </header>
+    
+            <div class="imgBlockMobile">
+                <img class="img2" src="./images/qr-code.PNG">
+            </div>
+    
+            <div class="detail">
+                <p>
+                    โครงการก่อสร้างอาคารศรีสวรินทิรานุสรน์ 150 ปี โรงพยาบาลสมเด็จพระบรมราชเทวี ณ ศรีราชาสภากาชาดไทย
+                    เป็นสถานพยาบาลให้บริการผู้ป่วยและประชาชนผู้ด้อยโอกาสให้สามารถเข้าถึงบริการรักษาพยาบาลได้ง่ายทั้งในสถานการณ์ปกติและฉุกเฉิน
+                    โดยไม่เลือกเชื้อชาติ และศาสนา
+                    ด้วยสภาพปัจจุบัน ถือว่าเป็นโรงพยาบาลที่อยู่ในภาวะวิกฤติต้องรับภาระในการให้บริการผู้ป่วยมากกว่า 1
+                    ล้านรายต่อปี ซึ่งนับวันจะเพิ่มขึ้นอย่างต่อเนื่อง
+                    สภาพของอาคาร อุปกรณ์การแพทย์หอผู้ป่วย และห้องฉุกเฉิน
+                    ไม่พอรองรับผู้มาใช้บริการทั้งยังขาดงบประมาณในการก่อสร้างอาคารรักษาพยาบาลและอุปกรณ์การแพทย์</p>
+            </div>
+    
+            <div class="googleMap">
+                <div id="map"></div>
+                <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+                <script src="./scripts/problem5.js"></script>
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHGR2Ks748hSxHWL0V6AjbjXQAR8dwKho&callback=initMap&libraries=&v=weekly"
+                    async></script>
+            </div>
+        </div>
+    
+        </div>
+    </article>
+
+
+</body>
+
+</html>

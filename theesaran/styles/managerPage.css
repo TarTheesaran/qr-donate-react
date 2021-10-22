@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Mitr', sans-serif;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 70px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(194, 194, 194); 
+    border-radius: 70px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(119, 119, 119); 
+  }
+  
+body {
+    background: #4152a4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    z-index: -1;
+    background-attachment: fixed;
+}
+
+article {
+    display: grid;
+    margin: auto 16px;
+    grid-template-columns: 700px 600px;
+    grid-gap: 20px;
+    padding-top: 20px;
+    z-index: 0;
+}
+
+article section {
+    background-color: #ebebeb;
+    border-radius: 12px;
+    padding: 20px 20px;
+    height: fit-content;
+}
+article section header{
+    padding: 0px 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+header h1 {
+    font-size: 33px;
+    margin-left: 10px;
+    line-height: 1.2em;
+}
+
+header a{
+    margin: auto;
+    margin-right: 0px;
+}
+.dataListBlock {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    gap: 10px;
+    max-height: 80vh;
+}
+
+.dataCard {
+    background-color: rgb(255, 255, 255);
+    padding: 5px 15px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 550px 80px;
+    gap: 4px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(255, 255, 255);
+}
+
+.detailBlock {
+    margin-top: 10px;
+    padding: 16px 20px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+h3 {
+    font-size: 20px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+    line-height: 1.4em;
+}
+
+h3+p {
+    font-size: 18px;
+    color: rgb(78, 78, 78);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 1.2em;
+}
+
+.detailBlock p span:nth-child(1) {
+    font-weight: bold;
+    line-height: 2em;
+}
+
+.detailBlock p {
+    font-size: 18px;
+}
+.deleteDataButton {
+    background-color: #ff4a32;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: auto;
+}
+.deleteDataButton:hover{
+    background-color: #bf3b2a;
+}
+.deleteDataButton:active{
+    background-color: rgb(198, 198, 198);
+    color: black;
+    
+}
+input:checked+.dataCard {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(59, 59, 59);
+}
+
+.dataListBlock input {
+    display: none;
+}
+
+.plusIcon {
+    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(100%) contrast(119%);
+    width: 40px;
+    height: auto;
+    margin: auto;
+}
+
+.plusIcon:hover {
+    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(80%) contrast(119%);
+}
+
+.plusIcon:active {
+    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(30%) contrast(50%);
+}
+
+
+.editIcon {
+    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(18deg) brightness(100%) contrast(119%);
+    width: 40px;
+    height: auto;
+    margin: auto;
+}
+
+.editIcon:hover {
+    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(18deg) brightness(80%) contrast(119%);
+}
+
+.editIcon:active {
+    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(18deg) brightness(30%) contrast(50%);
+}
+@media screen and (max-width: 1350px) {
+    article{
+        grid-template-columns: 600px 600px;  
+    }
+    .dataCard{
+        grid-template-columns: 450px 65px;
+    }
+}
+
+@media screen and (max-width: 1225px) {
+    article{
+        grid-template-columns: 500px auto;  
+    }
+    .dataCard{
+        grid-template-columns: 350px 65px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    article{
+        grid-template-columns: 450px auto;  
+    }
+    .dataCard{
+        grid-template-columns: 300px 65px;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    article{
+        grid-template-columns: auto auto;  
+    }
+    .dataCard {
+        grid-template-columns: 280px 65px;
+    }
+}
+@media screen and (max-width: 850px) {
+    article{
+        grid-template-columns: auto auto;  
+    }
+    .dataCard {
+        grid-template-columns: 240px 65px;
+    }
+}
+@media screen and (max-width: 800px) {
+    article{
+        grid-template-columns: 600px;  
+    }
+    .dataCard {
+        grid-template-columns: 450px 65px;
+    }
+    h3{
+        width:100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    article{
+        grid-template-columns: auto;  
+    }
+    .dataCard {
+        grid-template-columns: auto 65px;
+    }
+    h1{
+        font-size: 26px;
+    }
+    h3{
+        font-size: 18px;
+        width: 60vw;
+    }
+    h3 + p{
+        font-size: 15px;
+        width: 60vw;
+    }
+}
+@media screen and (max-width: 400px) {
+    h1{
+        font-size: 24px;
+    }
+    h3{
+        font-size: 18px;
+        width: 50vw;
+    }
+    h3 + p{
+        font-size: 15px;
+        width: 50vw;
+    }
+    .dataCard {
+        grid-template-columns: auto 40px;
+    }
+    .deleteDataButton{
+        padding: 5px 15px;
+        font-size: 12px;
+        margin-left: 0px !important; 
+    }
+    .detailBlock p {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 325px) {
+    h1{
+        font-size: 22px;
+    }
+    h3{
+        font-size: 15px;
+        width: 55vw;
+    }
+    h3 + p{
+        font-size: 12px;
+        width: 55vw;
+    }
+    .detailBlock p {
+        font-size: 14px;
+    }
+}
+@media screen and (max-height: 550px) {
+    .dataListBlock{
+        max-height: 550px;
+    }
+}

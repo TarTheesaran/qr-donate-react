@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Mitr", sans-serif;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+html{
+  background: 'GhostWhite';
+}
+nav + article {
+  padding-top: 65px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.transform-center {
+  transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+}
+
+body {
+  height: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.h-100v {
+  height: 100vh;
+}
+
+
+:root{
+  --maincolor:#4152A4;
+  --secondcolor:#61AF74;
+}
+.about_qr{
+  font-family: 'Mitr', sans-serif;
+}
+
+.about_qr header{
+  background-color: white;
+  height: 100%;  
+}
+.navbar{
+  background-color: var(--maincolor);
+  height: 40px;
+}
+.about_qr{
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.about_qr .left,
+.about_qr .right {
+  flex-basis: 50%;
+  position: relative;
+}
+.about_qr .left img{
+  width: 80%;
+  margin-left: 10%;
+  box-shadow: 7px 7px 7px grey;
+  border-radius: 20px;
+}
+.about_qr .right{    
+  margin-top: 50px;
+}
+.about_qr .right h1 {
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: var(--secondcolor);
+}
+.about_qr .right h1 span{
+  color: var(--maincolor);
+}
+.about_qr .right p{
+  line-height: 1.9;
+  max-width: 90%;
+  font-size: x-large;
+}
+.about_team{
+  background-color: var(--maincolor);
+  padding-bottom: 3%;
+}
+.about_team p{
+  padding-top: 16px ;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 56px;
+  color: #61AF74;
+}
+.about_team span{
+  color: white;
+}
+.cards_wrap{
+width: 100%;
+justify-content: center;
+  align-items: center;
+}
+
+.cards_wrap .card_inner{
+background: #fff;
+border-radius: 5px;
+padding: 35px 20px;
+min-width: 225px;
+  max-width: 300px;
+min-height: 315px;
+max-height: 500px;
+width: 100%;
+}
+.cards_wrap .card_item img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  align-items: center;
+  border-radius: 180px;
+}
+.cards_wrap .card_item .name{
+  width: 260px;
+color: var(--maincolor);
+font-weight: 900;
+letter-spacing: 2px;
+text-transform: uppercase;
+font-size: 18px;
+  text-align: center;
+}
+.cards_wrap .card_item .ID_number{
+  color: var(--maincolor);
+font-weight: 900;
+letter-spacing: 2px;
+font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cards_wrap .card_item .university_name{
+  font-size: 16px;
+line-height: 24px;
+color: #7b8ca0;
+  
+}
+.social-menu{
+  padding: 40px 0px 0px;
+  align-items: center;
+}
+.social-menu ul {
+  display: flex;
+}
+.social-menu ul li {
+  list-style: none;
+  margin: 0 10px;
+}
+.social-menu ul li .fa {
+  font-size: 20px;
+  line-height: 40px;
+}
+.social-menu ul li a {
+  color: black;
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  transition: 0.5s;
+  transform: translate(0,0px);
+  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+}
+.social-menu ul li a:hover {
+  transform: rotate(0deg) skew(0deg) translate(0, -10px);
+}
+.social-menu ul li:nth-child(1) a:hover  {
+  background-color: #3b5999;
+  color: white;
+}
+.social-menu ul li:nth-child(2) a:hover {
+  background-color: #0077B5;
+  color: white;
+}
+.social-menu ul li:nth-child(3) a:hover {
+  background-color: #cd201f;
+  color: white;
+}
+.social-menu ul li:nth-child(4) a:hover {
+  background-color: black;
+  color: white;
+}
+
+@media only screen and (max-width : 1280px){
+  .about_qr{
+      flex-direction: column;
+  }
+  .about_qr .right h1{
+      font-size: 56px;
+  }
+  .about_qr .right p{
+      font-size: 30px;
+  }
+}
+@media screen and (max-width : 568px) {
+  .about_qr .right h1{
+      font-size: xx-large;
+  }
+  .about_qr .right p{
+      font-size: large;
+  }
+}

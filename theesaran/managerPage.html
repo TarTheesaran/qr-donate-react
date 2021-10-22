@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="./styles/managerPage.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Mitr&display=swap&fbclid=IwAR28dPKH6LP-Gs1IegYTpTIidzpPB9jWzKzePfmi1AUWe-QZY6hOlTkVMRc">
+</head>
+<style>
+    .addDataBlock {
+        display: block;
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background: whitesmoke;
+    }
+</style>
+
+<body>
+    <article>
+        <section>
+            <header>
+                <h1>รายการ</h1>
+                <a href="./addDataPage.html">
+                    <image class="plusIcon" src="./images/plus.svg" />
+                </a>
+            </header>
+            <div id="dataList" class="dataListBlock">
+                <!-- for test -->
+                <!-- <label for="000">
+                    <input id="000" type="radio" name="radio" onclick="changeData(this.id);">
+                    <div class="dataCard">
+                        <div>
+                            <h3>Little Miracle ปาฏิหาริย์แห่งลมหายใจ</h3>
+                            <p>มูลนิธิโรงพยาบาลเด็ก</p>
+                        </div>
+                        <button class="deleteDataButton" onclick="deleteElement('0001block')">
+                            ลบ
+                        </button>
+                    </div>
+                </label> -->
+            </div>
+        </section>
+        <section>
+            <header>
+                <h1>รายละเอียด</h1>
+                <a href="./editDataPage.html">
+                    <image class="editIcon" src="./images/edit.svg" />
+                </a>
+            </header>
+            <div class="detailBlock">
+                <p>
+                    <span>
+                        ชื่อโครงการ:
+                    </span>
+                    <span id="project_name">
+                        Little Miracle ปาฏิหาริย์แห่งลมหายใจ
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        ชื่อหน่วยงาน:
+                    </span>
+                    <span id="project_agency">
+                        มูลนิธิโรงพยาบาลเด็ก
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        พิกัดหน่วยงาน
+                    </span>
+                    <span id="positon">
+                        13.7659571, 100.5351291
+                    </span>
+                    <span>
+                        <style>
+                            button {
+                                background: none;
+                                color: inherit;
+                                border: none;
+                                padding: 0;
+                                font: inherit;
+                                cursor: pointer;
+                                outline: inherit;
+                            }
+
+                            .googleMap {
+                                display: none;
+                                margin-top: 10px;
+                                padding: 0px 20px 70px 20px;
+                                background: whitesmoke;
+                                position: fixed;
+                                top: 20px;
+                                width: 70%;
+                                height: 80vh;
+                                max-height: 700px;
+                                border: 5px solid #444444;
+                                border-radius: 10px;
+                            }
+
+                            .exit-map {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                padding: 10px;
+                            }
+                        </style>
+                        <button class="map-bt" onclick="showMapPopup();"><i class="fa fa-map-marker" style="color:red;"
+                                aria-hidden="true"></i></button>
+
+                    </span>
+                </p>
+                <p>
+                    <span>คำอธิบาย:</span>
+                    <span id="description">
+                        ลมหายใจแรกของชีวิตคือปาฏิหาริย์แต่น่าเสียดายที่ลมหายใจแรกของทารกบางรายกลับต้องใช้เครื่องช่วยหายใจ
+                        เพื่อรักษาชีวิต คงจะดีไม่น้อย
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        ข้อมูลติดต่อ:
+                    </span>
+                    <span id="contact">
+                        กองทุนอาคารเฉลิมพระเกียรติฯ 420/8 ชั้น 1 อาคารสยามฯ ถ.ราชวิถี เขตราชเทวี กทม.10400
+                        <br>
+                        เบอร์โทร: 088 874 4671 <br>
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        หมวดหมู่:
+                    </span>
+                    <span id="category">
+                        โรงพยาบาล
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        รูปภาพโปสเตอร์:
+                    </span>
+                    <span>
+                        <a id="img_poster" target="_blank" href="./images/0001_p.jpg">แสดงรูปภาพ</a>
+                    </span>
+
+                </p>
+                <p>
+                    <span>
+                        รูปภาพ QR-code:
+                    </span>
+                    <span>
+                        <a id="img_qrcode" target="_blank" href="./images/0001_qr.png">แสดงรูปภาพ</a>
+                    </span>
+                </p>
+
+            </div>
+
+        </section>
+    </article>
+    <div id="googleMapPopup" class="googleMap">
+        <div class="exit-map">
+            <div></div>
+            <div>
+                <button onclick="showMapPopup();">
+                    <i class="fa fa-times" aria-hidden="true" style="font-size: 30px; color: red;"></i>
+                </button>
+            </div>
+        </div>
+        <div id="map"></div>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHGR2Ks748hSxHWL0V6AjbjXQAR8dwKho&callback=initMap&libraries=&v=weekly"
+            async></script>
+    </div>
+    <script src="./scripts/managerPage.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="style/style.css">  
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+        <div class="center" id="login">
+         <form  method="post">
+        <p class="titletxt">Sign in</p>
+        <div>
+            <img src="img/googlebutton.png" alt="" class="googlelogin"> </div>
+        
+            <p class="or">or</p>
+            <div class="txt_field">
+                <input type="text" placeholder="Email" required>
+            </div>
+            <div class="txt_field">
+                <input type="password" placeholder="Password" id="password" required>
+                <span id="show" >show</span>
+            </div>
+            <button class="allbutton">Sign in</button>
+            <div class="create_link">No account ? <a class="form_link" href="./" id="linkcreate_Account">Create account</a>
+            </div>
+        </form>   
+    </div>
+    <div class="center form--hidden" id="createaccount">
+            <form class="form" >
+            <h1 class="titletxt">Create Account</h1>
+            <div class="form_inputgroup">
+                <input type="text" id="foundation" class="form_input" autofocus placeholder="Foundation's name">
+            </div>
+            <div class="form_inputgroup">
+                <input type="text" class="form_input" autofocus placeholder="Email Address">
+            </div>
+            <div class="form_inputgroup">
+                <input type="text" class="form_input" id="password" autofocus placeholder="Password">
+            </div>
+            <div class="form_inputgroup">
+                <input type="text" class="form_input" id="confirm_password" autofocus placeholder="Confirm password">
+            </div>
+            
+            <button class="allbutton" type="submit">Continue</button>
+            <p class="form_text">
+                <div class="create_link">Already have an account? <a class="form_link" href="./" id="linkLogin">sign in</a>
+                </div>
+            </p>
+        </form>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+</html>

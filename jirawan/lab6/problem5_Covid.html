@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" style="background-image: url('./images/Covid.png');">
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem5</title>
+    <link rel="stylesheet" href="./styles/problem5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Mitr&display=swap&fbclid=IwAR28dPKH6LP-Gs1IegYTpTIidzpPB9jWzKzePfmi1AUWe-QZY6hOlTkVMRc">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav>
+            <input type="checkbox" id="show-menu">
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+            <div class="content">
+                <div class="logo">
+                    <p>QR-Donate</p>
+                </div>
+                <ul class="links">
+                    <!--link  -->
+                    <li><a class="" href="./problem5_home.html" onclick="">หน้าหลัก</a></li>
+                    <li><a class="" href="#0" onclick="">เกี่ยวกับ QR-Donate</a></li>
+                    <li><a class="" href="#0" onclick="">วิธีการใช้งาน</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <article class="homepage">
+        <div class="page">
+
+            <div class="imgBlockFullPage">
+                <img class="img2" src="./images/qr-code-covid.png">
+            </div>
+
+            <header>
+                <h1>โครงการจัดสร้างโรงพยาบาลสนามรักษาผู้ป่วยโควิด-19</h1>
+                <h3>มูลนิธิเวชดุสิตฯ</h3>
+            </header>
+
+            <div class="imgBlockMobile">
+                <img class="img2" src="./images/qr-code-covid.png">
+            </div>
+
+            <div class="detail">
+                <p>
+                    โครงการจัดสร้างโรงพยาบาลสนามรักษาผู้ป่วยโควิด-19 โดยมูลนิธิเวชดุสิตฯ
+                    เพื่อจัดสร้างระบบบริการโรงพยาบาลสนามขนาด 100 เตียงรับผู้ป่วยติดเชื้อโควิด-19 ในกลุ่มอาการสีเหลือง
+                    โดยใช้เทคโนโลยีในการช่วยดูแลผู้ป่วย เพื่อป้องกันการแพร่กระจายเชื้อ
+                    บรรเทาปัญหาและตัดวงจรการเจ็บป่วยรุนแรงสู่กลุ่มอาการสีแดงของสถานการณ์การติดเชื้อโควิด-19</p>
+            </div>
+
+            <div class="googleMap">
+                <div id="map"></div>
+                <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+                <script src="./scripts/problem5.js"></script>
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHGR2Ks748hSxHWL0V6AjbjXQAR8dwKho&callback=initMap&libraries=&v=weekly"
+                    async></script>
+            </div>
+        </div>
+
+        </div>
+    </article>
+
+
+</body>
+
+</html>
