@@ -5,6 +5,7 @@ export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
     this.handleClickNav = this.handleClickNav.bind(this);
+    this.handleClickAdmin = this.handleClickNav.bind(this);
     this.state = {
       openNav: true,
       openAdmin: true,
@@ -30,62 +31,61 @@ export default class Navigation extends React.Component {
     return (
       <nav
         className={
-          "px-5 py-4 h-14 sm:h-20 ustify-between fixed text-white shadow w-screen z-50"
+          "px-5 h-14 sm:h-20 ustify-between fixed text-white shadow w-screen z-50"
         }
         style={bgColor}
       >
-        <div
-          className={" justify-between items-center space-x-3 hidden sm:flex"}
-        >
-          <ul className={"text-5xl -mt-1"}>
+        <div className={" justify-between items-center hidden sm:flex"}>
+          <ul className={"text-5xl"}>
             <li className="hidden sl:block">QR-donate</li>
           </ul>
-          <ul className={"flex items-center space-x-3 text-3xl gap-4"}>
+          <ul className={"flex items-center text-3xl mt-1"}>
             <li>
               <Link to={"/"}>
                 <button
                   className={
-                    "white-text transition duration-300 focus:bg-blue-50 focus:text-gray-900 hover:bg-blue-50 hover:text-gray-800 rounded-3xl pt-1 pb-2 px-5"
+                    "white-text transition duration-300 hover:bg-blue-900 hover:text-gray-50 py-6 -mt-2 px-10"
                   }
                 >
                   <p>หน้าหลัก</p>
                 </button>
               </Link>
             </li>
-            {/* <li>
+
+            <li>
+              <Link to={"/about"} className="mr-16">
+                <button
+                  className={
+                    "white-text transition duration-300 hover:bg-blue-900 hover:text-gray-50 py-6 -mt-2 px-10"
+                  }
+                >
+                  <p>เกี่ยวกับ</p>
+                </button>
+              </Link>
+              {/* <li>
               <Link to={"/login"}>
                 <button
                   className={
-                    "white-text transition duration-300 focus:bg-blue-50 focus:text-gray-900 hover:bg-blue-50 hover:text-gray-800 rounded-3xl pt-1 pb-2 px-5"
+                    "white-text transition duration-300 hover:bg-blue-50 hover:text-gray-800 py-10 px-5"
                   }
                 >
                   <p>login</p>
                 </button>
               </Link>
             </li> */}
-            <li>
-              <Link to={"/about"} className="mr-16">
-                <button
-                  className={
-                    "white-text transition duration-300 focus:bg-blue-50 focus:text-gray-900 hover:bg-blue-50 hover:text-gray-800 rounded-3xl pt-1 pb-2 px-5"
-                  }
-                >
-                  <p>เกี่ยวกับ</p>
-                </button>
-              </Link>
-              
             </li>
             <li>
-              <button className={"white-text mr-2 group -mt-1"}>
+              <button className={"white-text mr-2"} onClick={this.handleClickNav}>
                 <i
                   className={
-                    " group-focus:border-green-500 border-4 rounded-full border-blue-900 text-5xl fas fa-user-circle hover:text-blue-200"
+                    " border-4 rounded-full border-blue-900 text-5xl fas fa-user-circle hover:text-blue-200"
                   }
                 ></i>
                 <div
-                  className="group-focus:-translate-x-56 group-focus:opacity-100  opacity-0 transform transition ease-in-out duration-200 delay-50 
-                 fixed -right-52 top-18  text-gray-700 text-2xl mt-2 font-light bg-white border border-gray-200 divide-y divide-gray-300 
-                 rounded-md shadow-lg outline-none text-left"
+                  className={
+                    `${openNav ? "" : "-translate-x-86 "}` +
+                    "z-50 transform transition ease-in-out duration-200 delay-50 top fixed -right-84 top-16  text-gray-700 text-2xl mt-2 font-light bg-white border border-gray-200 divide-y divide-gray-300 rounded-md shadow-lg outline-none text-left"
+                }
                 >
                   <div className="py-5 px-6 cursor-default">
                     <p className="text-lg leading-5">ลงชื่อเข้าใช้โดย</p>
@@ -108,15 +108,20 @@ export default class Navigation extends React.Component {
                       <span>
                         <i className="fas fa-sign-out-alt mr-2 text-lg"></i>
                       </span>
-                      <span className=" cursor-pointer">
-                        ออกจากระบบ
-                      </span>
+                      <span className=" cursor-pointer">ออกจากระบบ</span>
                     </p>
                   </div>
                 </div>
               </button>
             </li>
           </ul>
+          <div
+            className={
+              `${openNav ? "hidden " : ""}` +
+              "fixed top-20 right-0 w-full h-screen "
+            }
+            onClick={this.handleClickNav}
+          ></div>
         </div>
         <div
           className={
@@ -126,7 +131,9 @@ export default class Navigation extends React.Component {
           <div>
             <i
               onClick={this.handleClickNav}
-              className={`${openNav ? "fas fa-bars " : "fas fa-times "} text-2xl -mt-1`}
+              className={`${
+                openNav ? "fas fa-bars " : "fas fa-times "
+              } text-2xl mt-3`}
             ></i>
           </div>
           <div className="link">
@@ -141,7 +148,7 @@ export default class Navigation extends React.Component {
                   <Link to={"/"}>
                     <button
                       className={
-                        " white-text transition text-2xl duration-300 text-left w-56 py-2 ml-7"
+                        " white-text transition text-2xl duration-300 text-left w-52 py-2 ml-2"
                       }
                     >
                       <p>หน้าหลัก</p>
@@ -152,37 +159,37 @@ export default class Navigation extends React.Component {
                   <Link to={"/about"}>
                     <button
                       className={
-                        "white-text transition text-2xl duration-300 text-left w-56 py-2 ml-7"
+                        "white-text transition text-2xl duration-300 text-left w-52 py-2 ml-2"
                       }
                     >
                       <p>เกี่ยวกับ</p>
                     </button>
                   </Link>
                 </li>
-                <li>
+                <li className="mt-5">
                   <Link to={"/admin"}>
+                  <p className="ml-3">Admin</p>
                     <div className={"white-text mr-2 flex"}>
-                      {/* <i
+                      <button
                         className={
-                          "text-2xl transition text-2xl duration-300 fas fa-user-circle hover:text-gray-300 mx-auto"
+                          "text-gray-300 transition text-2xl duration-300 text-left py-2 pl-4 w-56"
                         }
-                      ></i> */}
-                                       <button
-                      className={
-                        "white-text transition text-2xl duration-300 text-left py-2 ml-7 w-56"
-                      }
-                    >
-                      <p>จัดการโครงการ</p>
-                    </button>
+                      >
+                        <p>จัดการโครงการ</p>
+                      </button>
                     </div>
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
-            <div className={`${openNav ? "hidden " : ""}` +"fixed left-52 top-14 right-0 w-full h-screen"} onClick={this.handleClickNav}>
-                
-            </div>
+          <div
+            className={
+              `${openNav ? "hidden " : ""}` +
+              "fixed left-52 top-14 right-0 w-full h-screen "
+            }
+            onClick={this.handleClickNav}
+          ></div>
         </div>
       </nav>
     );

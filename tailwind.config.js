@@ -26,6 +26,8 @@ module.exports = {
     textColor: ['responsive', 'hover', 'group-hover','group-focus', 'focus'],
     opacity: ['active', 'hover', 'group-hover','group-focus', 'focus'],
     borderColor: ['group-focus','hover', 'focus'],
+    display: ['group-focus','hover', 'focus', 'responsive'],
+    inset: ['group-focus','hover', 'focus', 'responsive'],
   },
   plugins: [],
 }

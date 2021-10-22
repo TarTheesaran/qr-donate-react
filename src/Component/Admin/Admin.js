@@ -96,8 +96,8 @@ export default class About extends React.Component {
                   tutorials.map((tutorial, index) => (
                     <li
                       className={
-                        "list-group-item" +
-                        (index === currentIndex ? "active" : "")
+                        "list-group-item border-2 my-1 rounded-lg" +
+                        (index === currentIndex ? " border-green-500" : "")
                       }
                       onClick={() => this.setActiveTutorial(tutorial, index)}
                       key={index}

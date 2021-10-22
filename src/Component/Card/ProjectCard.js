@@ -103,12 +103,18 @@ export default class ProjectCard extends React.Component {
     this.refreshList = this.refreshList.bind(this);
     this.setActiveTutorial = this.setActiveTutorial.bind(this);
     this.onDataChange = this.onDataChange.bind(this);
+    this.handleClickQR = this.handleClickNav.bind(this);
     this.state = {
       tutorials: [],
       currentTutorial: null,
       currentIndex: -1,
+      openQR: true,
     };
   }
+  handleClickNav = () => {
+    this.setState({ openQR: !this.state.openQR });
+    console.log(this.state.openQR);
+  };
 
   componentDidMount() {
     AdminData.getAll().on("value", this.onDataChange);
@@ -163,11 +169,11 @@ export default class ProjectCard extends React.Component {
     const { tutorials } = this.state;
 
     return (
-      <article className="mt-4" >
+      <article className="" >
         <div className="flex flex-wrap mx-auto justify-center">
           {tutorials &&
             tutorials.map((tutorial, index) => (
-              <div className=" w-86 rounded-lg overflow-hidden shadow-lg relative bg-white xs:mx-4 lg:m-6 m-5 xs:my-4 lg:my-7" key={index}>
+              <div className=" w-86 rounded-lg overflow-hidden shadow-lg relative bg-white xs:mx-4 lg:m-6 m-2 xs:my-4 lg:my-7" key={index}>
                 <img
                   className="relative object-cover  w-96  h-36"
                   src={tutorial.img_poster_url}
@@ -187,12 +193,12 @@ export default class ProjectCard extends React.Component {
                 </div>
                 <div className="px-6 pt-2 pb-2 text-right absolute bottom-2 right-0">
                   <a target="_blank" rel="noreferrer" href={tutorial.img_qrcode_url}>
-                    <span className="inline-block bg-green-400 rounded-full px-4 py-2 text-mm font-medium text-white mr-2 mb-2">
+                    <span className="inline-block bg-green-400 hover:bg-green-500 rounded-full px-4 py-2 text-mm font-medium text-white mr-2 mb-2">
                       <i className="fas fa-qrcode "> QR</i>
                     </span>
                   </a>
                   <Link target="_blank" to={`/detail/${tutorial.key}`}>
-                    <span className="inline-block bg-blue-500 rounded-full px-5 py-2 text-md font-medium text-white mr-2 mb-2">
+                    <span className="inline-block bg-blue-500 hover:bg-blue-600 rounded-full px-5 py-2 text-md font-medium text-white mr-2 mb-2">
                       รายละเอียด
                     </span>
                   </Link>
@@ -200,6 +206,15 @@ export default class ProjectCard extends React.Component {
               </div>
             ))}
         </div>
+        {/* <div>
+            <div className={"bg-gray-700 fixed top-1/2 right-1/2 w-72 -mx-40"}>
+                  <img
+                    className="relative object-cover  w-96  h-36"
+                    src={""}
+                    alt=""
+                />
+            </div>
+        </div> */}
       </article>
     );
   }

@@ -192,7 +192,7 @@ export default class AdminDataEdit extends Component {
               </label>
               <br></br>
               <input
-                className="border-0 mt-1 mb-2 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded-xl text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 mt-1 mb-2 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded-xl text-lg font-light shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 type="text"
                 id="project_name"
                 required
@@ -207,7 +207,7 @@ export default class AdminDataEdit extends Component {
               </label>
               <br></br>
               <input
-                className="border-0 mt-1 mb-2 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded-xl text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="border-0 mt-1 mb-2 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded-xl text-lg font-light shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 type="text"
                 id="project_agency"
                 required
@@ -223,7 +223,7 @@ export default class AdminDataEdit extends Component {
                 </label>
                 <br></br>
                 <input
-                  className="border-0 mt-1 mb-2 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded-xl text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  className="border-0 mt-1 mb-2 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded-xl text-lg font-light shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="locationlat"
                   required
@@ -238,7 +238,7 @@ export default class AdminDataEdit extends Component {
                 </label>
                 <br></br>
                 <input
-                  className="border-0 mt-1 mb-2 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded-xl text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  className="border-0 mt-1 mb-2 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded-xl text-lg font-light shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="locationlng"
                   required
@@ -254,7 +254,7 @@ export default class AdminDataEdit extends Component {
               </label>
               <br></br>
               <textarea
-                className="h-24 border-0 mt-1 mb-2 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded-xl text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="h-24 border-0 mt-1 mb-2 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded-xl text-lg font-light shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 type="textarea"
                 id="description"
                 required
@@ -269,7 +269,7 @@ export default class AdminDataEdit extends Component {
               </label>
               <br></br>
               <textarea
-                className="h-16 border-0 mt-1 mb-2 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded-xl text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="h-16 border-0 mt-1 mb-2 px-3 py-2 placeholder-blueGray-300 text-blueGray-600 bg-white rounded-xl text-lg font-light shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 type="text"
                 id="contact"
                 required
@@ -341,15 +341,14 @@ export default class AdminDataEdit extends Component {
                     style={{
                       backgroundImage: `url(${this.state.img_qrcode_url})`,
                       backgroundRepeat: "no-repeat",
-                      backgroundSize: "100% auto",
+                      backgroundSize: "auto 100%",
                       opacity: "1",
                       backgroundPosition: "center",
                     }}
                   >
                     <div>
                       <div className="h-full w-full text-center flex flex-col items-center justify-center opacity-20 text-gray-900">
-                        {/* <i className="fas fa-cloud-upload-alt text-7xl"></i> */}
-                        <p className="pointer-none text-gray-900 mt-0 ml-2">
+                        <p className="pointer-none text-gray-900 mt-0 ml-5">
                           รูปภาพตัวอย่าง
                         </p>
                       </div>
@@ -357,7 +356,7 @@ export default class AdminDataEdit extends Component {
                         urlFirebaseStorage={this.onChangeImgQRCode}
                       />
                     </div>
-                    <div className=" w-28 -ml-11 cursor-pointer bg-blue-400 hover:bg-blue-200 focus:bg-blue-800 shadow-lg py-2 inline-block  text-green-50 hover:text-white rounded mt-10">
+                    <div className=" w-28 -ml-10 cursor-pointer bg-blue-400 hover:bg-blue-200 focus:bg-blue-800 shadow-lg py-2 inline-block  text-green-50 hover:text-white rounded mt-10">
                       เลือกรูปภาพ
                     </div>
                   </label>
@@ -367,10 +366,17 @@ export default class AdminDataEdit extends Component {
             <div className="flex flex-row-reverse mt-8 ">
               <button
                 onClick={this.updateTutorial}
-                className="cursor-pointer bg-green-600 hover:bg-green-500 focus:bg-green-800 shadow-xl px-8 py-2 inline-block  text-green-50 hover:text-white rounded"
+                className="cursor-pointer bg-green-600 hover:bg-green-500 focus:bg-green-800 shadow-xl px-8 py-2 inline-block  text-green-50 hover:text-white rounded text-xl"
               >
                 ยืนยัน
               </button>
+              <Link to={"/admin"}>
+                <button className="cursor-pointer bg-yellow-500 hover:bg-yellow-400 focus:bg-yellow-800 shadow-xl px-8 py-2 inline-block  text-yellow-50 hover:text-white rounded mr-5  text-xl">
+                  <p className={"white-text"}>
+                    ยกเลิก
+                  </p>
+                </button>
+              </Link>
             </div>
           </div>
         )}

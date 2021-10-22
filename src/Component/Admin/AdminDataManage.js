@@ -146,31 +146,31 @@ export default class AdminDataManage extends Component {
             </p>
             <div className="flex flex-row-reverse flex-wrap">
               <button
-                className="cursor-pointer m-2 bg-red-600 hover:bg-red-500 focus:bg-red-800 shadow-lg px-5 py-2 inline-block  text-green-50 hover:text-white rounded"
+                className="cursor-pointer m-2 bg-red-600 hover:bg-red-500  shadow-lg px-5 py-2 inline-block  text-green-50 hover:text-white rounded"
                 onClick={this.deleteTutorial}
               >
-                Delete
+                ลบ
               </button>
               <Link to={`/editproeject/${this.state.project_data.key}`}>
-                <button className="cursor-pointer m-2 bg-yellow-500 hover:bg-yellow-400 focus:bg-yellow-800 shadow-lg px-5 py-2 inline-block  text-green-50 hover:text-white rounded">
-                  Edit
+                <button className="cursor-pointer m-2 bg-yellow-500 hover:bg-yellow-400  shadow-lg px-5 py-2 inline-block  text-green-50 hover:text-white rounded">
+                  แก้ไข
                 </button>
               </Link>
               {project_data.published ? (
                 <button
-                  className="cursor-pointer m-2 bg-red-400 hover:bg-red-300 focus:bg-red-900 shadow-lg px-5 py-2 inline-block  text-green-50 hover:text-white rounded"
+                  className="cursor-pointer m-2 bg-red-400 hover:bg-red-300  shadow-lg px-5 py-2 inline-block  text-green-50 hover:text-white rounded"
                   onClick={() => this.updatePublished(false)}>
-                  UnPublish
+                  ยกเลิกการเผยแพร่
                 </button>
               ) : (
                 <button
-                  className="cursor-pointer m-2 bg-green-500 hover:bg-green-500 focus:bg-green-800 shadow-lg px-5 py-2 inline-block  text-green-50 hover:text-white rounded"
+                  className="cursor-pointer m-2 bg-green-500 hover:bg-green-400  shadow-lg px-5 py-2 inline-block  text-green-50 hover:text-white rounded"
                   onClick={() => this.updatePublished(true)}>
-                  Publish
+                  เผยแพร่
                 </button>
               )}
             </div>
-            <p className=" text-green-500">{this.state.message}</p>
+            <p className=" text-green-500 text-right">{this.state.message}</p>
           </div>
         ) : (
           <div>
